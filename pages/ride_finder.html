@@ -1,0 +1,1634 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Your Perfect Ride - UniCircle</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+  <script type="module" src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Funicircle6277back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.9"></script>
+  <script type="module" src="https://static.rocket.new/rocket-shot.js?v=0.0.1"></script>
+  </head>
+<body class="bg-background min-h-screen">
+    <!-- Navigation Header -->
+    <header class="bg-surface shadow-campus-sm sticky top-0 z-50">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <a href="homepage.html" class="flex items-center space-x-2">
+                        <svg class="w-8 h-8 text-primary" viewBox="0 0 32 32" fill="currentColor">
+                            <circle cx="16" cy="8" r="6" opacity="0.8"/>
+                            <circle cx="8" cy="20" r="4" opacity="0.6"/>
+                            <circle cx="24" cy="20" r="4" opacity="0.6"/>
+                            <path d="M12 18c2-2 6-2 8 0" stroke="currentColor" stroke-width="2" fill="none"/>
+                        </svg>
+                        <span class="text-xl font-bold text-primary">UniCircle</span>
+                    </a>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="homepage.html" class="text-text-secondary hover:text-primary transition-colors">Home</a>
+                    <a href="ride_finder.html" class="text-primary font-medium">Find Rides</a>
+                    <a href="profile_management.html" class="text-text-secondary hover:text-primary transition-colors">Profile</a>
+                    <div class="flex items-center space-x-3">
+                        <a href="student_onboarding.html" class="btn-primary">Join Now</a>
+                    </div>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button class="text-text-secondary hover:text-primary p-2">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Search Hero Section -->
+    <section class="bg-gradient-to-br from-primary-50 to-secondary-50 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-8">
+                <h1 class="text-3xl lg:text-4xl font-bold text-text-primary mb-4">
+                    Find Your Perfect <span class="text-gradient-primary">Ride Match</span>
+                </h1>
+                <p class="text-lg text-text-secondary max-w-2xl mx-auto">
+                    Connect with fellow students for safe, affordable rides across Southern California campuses
+                </p>
+            </div>
+
+            <!-- Quick Search Form -->
+            <div class="max-w-4xl mx-auto">
+                <div class="bg-surface rounded-lg shadow-campus-md p-6 border border-border">
+                    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+                        <!-- From Location -->
+                        <div class="relative">
+                            <label class="block text-sm font-medium text-text-primary mb-2">From</label>
+                            <div class="relative">
+                                <input type="text" id="fromLocation" placeholder="UCLA, USC, UCSD..." class="input-field pl-10" value="USC Campus">
+                                <svg class="w-5 h-5 text-text-muted absolute left-3 top-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                                </svg>
+                            </div>
+                        </div>
+
+                        <!-- To Location -->
+                        <div class="relative">
+                            <label class="block text-sm font-medium text-text-primary mb-2">To</label>
+                            <div class="relative">
+                                <input type="text" id="toLocation" placeholder="LAX, Santa Monica, Downtown..." class="input-field pl-10" value="LAX Airport">
+                                <svg class="w-5 h-5 text-text-muted absolute left-3 top-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 616 0z"/>
+                                </svg>
+                            </div>
+                        </div>
+
+                        <!-- Date -->
+                        <div>
+                            <label class="block text-sm font-medium text-text-primary mb-2">Date</label>
+                            <input type="date" id="searchDate" class="input-field" value="2025-10-23">
+                        </div>
+
+                        <!-- Time -->
+                        <div>
+                            <label class="block text-sm font-medium text-text-primary mb-2">Time</label>
+                            <input type="time" id="searchTime" class="input-field" value="14:30">
+                        </div>
+                    </div>
+
+                    <!-- Search Actions -->
+                    <div class="flex flex-col sm:flex-row gap-4 items-center">
+                        <button id="searchRidesBtn" class="btn-primary w-full sm:w-auto flex items-center justify-center">
+                            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                            </svg>
+                            Search Rides
+                        </button>
+                        <button id="offerRideBtn" class="btn-secondary w-full sm:w-auto flex items-center justify-center">
+                            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
+                            </svg>
+                            Offer a Ride
+                        </button>
+                        <button id="advancedFiltersBtn" class="text-text-secondary hover:text-primary transition-colors flex items-center">
+                            <svg class="w-5 h-5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4"/>
+                            </svg>
+                            Advanced Filters
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-4 gap-8">
+                <!-- Enhanced Filters Sidebar -->
+                <div class="lg:col-span-1">
+                    <div class="bg-surface rounded-lg shadow-campus border border-border p-6 sticky top-24" id="filtersPanel">
+                        <div class="flex items-center justify-between mb-6">
+                            <h3 class="text-lg font-semibold text-text-primary">Filters</h3>
+                            <button id="resetFiltersBtn" class="text-sm text-text-secondary hover:text-primary transition-colors">Reset</button>
+                        </div>
+
+                        <!-- Price Range -->
+                        <div class="mb-6">
+                            <h4 class="font-medium text-text-primary mb-3">Price Range</h4>
+                            <div class="space-y-2">
+                                <label class="flex items-center">
+                                    <input type="checkbox" name="priceRange" value="0-15" class="rounded border-border text-primary focus:ring-primary-500" checked>
+                                    <span class="ml-2 text-sm text-text-secondary">Under $15</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="checkbox" name="priceRange" value="15-25" class="rounded border-border text-primary focus:ring-primary-500">
+                                    <span class="ml-2 text-sm text-text-secondary">$15 - $25</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="checkbox" name="priceRange" value="25-40" class="rounded border-border text-primary focus:ring-primary-500">
+                                    <span class="ml-2 text-sm text-text-secondary">$25 - $40</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="checkbox" name="priceRange" value="40+" class="rounded border-border text-primary focus:ring-primary-500">
+                                    <span class="ml-2 text-sm text-text-secondary">$40+</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Campus -->
+                        <div class="mb-6">
+                            <h4 class="font-medium text-text-primary mb-3">Campus</h4>
+                            <div class="space-y-2">
+                                <label class="flex items-center">
+                                    <input type="checkbox" name="campus" value="usc" class="rounded border-border text-primary focus:ring-primary-500" checked>
+                                    <span class="ml-2 text-sm text-text-secondary">USC</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="checkbox" name="campus" value="ucla" class="rounded border-border text-primary focus:ring-primary-500">
+                                    <span class="ml-2 text-sm text-text-secondary">UCLA</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="checkbox" name="campus" value="ucsd" class="rounded border-border text-primary focus:ring-primary-500">
+                                    <span class="ml-2 text-sm text-text-secondary">UCSD</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="checkbox" name="campus" value="calpoly" class="rounded border-border text-primary focus:ring-primary-500">
+                                    <span class="ml-2 text-sm text-text-secondary">Cal Poly</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Departure Time -->
+                        <div class="mb-6">
+                            <h4 class="font-medium text-text-primary mb-3">Departure Time</h4>
+                            <div class="space-y-2">
+                                <label class="flex items-center">
+                                    <input type="checkbox" name="timeRange" value="morning" class="rounded border-border text-primary focus:ring-primary-500">
+                                    <span class="ml-2 text-sm text-text-secondary">Morning (6AM - 12PM)</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="checkbox" name="timeRange" value="afternoon" class="rounded border-border text-primary focus:ring-primary-500" checked>
+                                    <span class="ml-2 text-sm text-text-secondary">Afternoon (12PM - 6PM)</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="checkbox" name="timeRange" value="evening" class="rounded border-border text-primary focus:ring-primary-500">
+                                    <span class="ml-2 text-sm text-text-secondary">Evening (6PM - 12AM)</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Vehicle Type -->
+                        <div class="mb-6">
+                            <h4 class="font-medium text-text-primary mb-3">Vehicle Type</h4>
+                            <div class="space-y-2">
+                                <label class="flex items-center">
+                                    <input type="checkbox" name="vehicleType" value="sedan" class="rounded border-border text-primary focus:ring-primary-500">
+                                    <span class="ml-2 text-sm text-text-secondary">Sedan</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="checkbox" name="vehicleType" value="suv" class="rounded border-border text-primary focus:ring-primary-500">
+                                    <span class="ml-2 text-sm text-text-secondary">SUV</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="checkbox" name="vehicleType" value="hatchback" class="rounded border-border text-primary focus:ring-primary-500">
+                                    <span class="ml-2 text-sm text-text-secondary">Hatchback</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Preferences -->
+                        <div class="mb-6">
+                            <h4 class="font-medium text-text-primary mb-3">Preferences</h4>
+                            <div class="space-y-2">
+                                <label class="flex items-center">
+                                    <input type="checkbox" name="preferences" value="music" class="rounded border-border text-primary focus:ring-primary-500">
+                                    <span class="ml-2 text-sm text-text-secondary">Music OK</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="checkbox" name="preferences" value="pets" class="rounded border-border text-primary focus:ring-primary-500">
+                                    <span class="ml-2 text-sm text-text-secondary">Pets OK</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="checkbox" name="preferences" value="nonsmoking" class="rounded border-border text-primary focus:ring-primary-500">
+                                    <span class="ml-2 text-sm text-text-secondary">Non-smoking</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="checkbox" name="preferences" value="femaleDrivers" class="rounded border-border text-primary focus:ring-primary-500">
+                                    <span class="ml-2 text-sm text-text-secondary">Female drivers only</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Apply Filters Button -->
+                        <button id="applyFiltersBtn" class="w-full btn-primary text-sm py-2">
+                            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.207A1 1 0 013 6.5V4z"/>
+                            </svg>
+                            Apply Filters
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Results Section -->
+                <div class="lg:col-span-3">
+                    <!-- Results Header -->
+                    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6">
+                        <div>
+                            <h2 class="text-xl font-semibold text-text-primary">Available Rides</h2>
+                            <p id="resultsCount" class="text-text-secondary">Found 12 rides matching your criteria</p>
+                        </div>
+                        <div class="flex items-center space-x-4 mt-4 sm:mt-0">
+                            <select id="sortResults" class="input-field text-sm py-2">
+                                <option value="bestMatch">Sort by: Best Match</option>
+                                <option value="priceLowHigh">Sort by: Price (Low to High)</option>
+                                <option value="priceHighLow">Sort by: Price (High to Low)</option>
+                                <option value="departureTime">Sort by: Departure Time</option>
+                                <option value="rating">Sort by: Rating</option>
+                            </select>
+                            <div class="flex border border-border rounded-lg">
+                                <button id="listViewBtn" class="p-2 bg-primary text-white rounded-l-lg">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h16M4 18h16"/>
+                                    </svg>
+                                </button>
+                                <button id="gridViewBtn" class="p-2 text-text-secondary hover:bg-gray-50 rounded-r-lg">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Ride Cards -->
+                    <div id="rideResults" class="space-y-4">
+                        <!-- Featured Ride Card -->
+                        <div class="bg-surface rounded-lg shadow-campus border-2 border-primary-100 p-6 relative ride-card" data-price="12" data-campus="usc" data-time="afternoon" data-preferences="music,nonsmoking">
+                            <div class="absolute top-4 right-4">
+                                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-600">
+                                    Best Match
+                                </span>
+                            </div>
+                            
+                            <div class="flex items-start space-x-4">
+                                <img 
+                                    src="https://images.unsplash.com/photo-1644130751150-b56290ba3be7" 
+                                    alt="Sarah Martinez, USC student with backpack smiling outdoors"
+                                    class="w-16 h-16 rounded-full object-cover"
+                                    onerror="this.src='https://images.pixabay.com/photo/2016/11/21/12/42/beard-1845166_1280.jpg'; this.onerror=null;"
+                                >
+                                <div class="flex-1">
+                                    <div class="flex items-center justify-between mb-2">
+                                        <div>
+                                            <h3 class="font-semibold text-text-primary">Sarah M.</h3>
+                                            <p class="text-sm text-text-secondary">USC, Senior • 4.9 ⭐ (127 rides)</p>
+                                        </div>
+                                        <div class="text-right">
+                                            <div class="text-2xl font-bold text-primary">$12</div>
+                                            <div class="text-sm text-text-secondary">per person</div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="grid md:grid-cols-2 gap-4 mb-4">
+                                        <div>
+                                            <div class="flex items-center text-sm text-text-secondary mb-1">
+                                                <svg class="w-4 h-4 mr-2 text-success" fill="currentColor" viewBox="0 0 20 20">
+                                                    <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
+                                                </svg>
+                                                USC Campus → LAX Airport
+                                            </div>
+                                            <div class="flex items-center text-sm text-text-secondary">
+                                                <svg class="w-4 h-4 mr-2 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                                </svg>
+                                                Today, 2:30 PM
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div class="flex items-center text-sm text-text-secondary mb-1">
+                                                <svg class="w-4 h-4 mr-2 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+                                                </svg>
+                                                2 seats available
+                                            </div>
+                                            <div class="flex items-center text-sm text-text-secondary">
+                                                <svg class="w-4 h-4 mr-2 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                                </svg>
+                                                Instant booking
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="flex items-center justify-between">
+                                        <div class="flex items-center space-x-4 text-sm text-text-muted">
+                                            <span class="flex items-center">
+                                                <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3"/>
+                                                </svg>
+                                                Music OK
+                                            </span>
+                                            <span class="flex items-center">
+                                                <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192L5.636 18.364M12 2.25a9.75 9.75 0 100 19.5 9.75 9.75 0 000-19.5z"/>
+                                                </svg>
+                                                Non-smoking
+                                            </span>
+                                            <span class="text-success font-medium">98% compatibility</span>
+                                        </div>
+                                        <div class="flex space-x-2">
+                                            <button class="px-4 py-2 text-sm border border-border rounded-lg hover:bg-gray-50 transition-colors message-btn">
+                                                Message
+                                            </button>
+                                            <button class="btn-primary text-sm px-6 py-2 book-btn">
+                                                Book Ride
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Regular Ride Card 1 -->
+                        <div class="bg-surface rounded-lg shadow-campus border border-border p-6 ride-card" data-price="15" data-campus="usc" data-time="afternoon" data-preferences="nonsmoking">
+                            <div class="flex items-start space-x-4">
+                                <img 
+                                    src="https://images.unsplash.com/photo-1511270952906-09f20fd1ef71" 
+                                    alt="Marcus Johnson, USC student with friendly smile wearing casual shirt"
+                                    class="w-16 h-16 rounded-full object-cover"
+                                    onerror="this.src='https://images.pixabay.com/photo/2016/11/21/12/42/beard-1845166_1280.jpg'; this.onerror=null;"
+                                >
+                                <div class="flex-1">
+                                    <div class="flex items-center justify-between mb-2">
+                                        <div>
+                                            <h3 class="font-semibold text-text-primary">Marcus J.</h3>
+                                            <p class="text-sm text-text-secondary">USC, Graduate • 4.8 ⭐ (89 rides)</p>
+                                        </div>
+                                        <div class="text-right">
+                                            <div class="text-2xl font-bold text-primary">$15</div>
+                                            <div class="text-sm text-text-secondary">per person</div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="grid md:grid-cols-2 gap-4 mb-4">
+                                        <div>
+                                            <div class="flex items-center text-sm text-text-secondary mb-1">
+                                                <svg class="w-4 h-4 mr-2 text-success" fill="currentColor" viewBox="0 0 20 20">
+                                                    <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
+                                                </svg>
+                                                USC Campus → LAX Airport
+                                            </div>
+                                            <div class="flex items-center text-sm text-text-secondary">
+                                                <svg class="w-4 h-4 mr-2 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                                </svg>
+                                                Today, 3:15 PM
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div class="flex items-center text-sm text-text-secondary mb-1">
+                                                <svg class="w-4 h-4 mr-2 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+                                                </svg>
+                                                1 seat available
+                                            </div>
+                                            <div class="flex items-center text-sm text-text-secondary">
+                                                <svg class="w-4 h-4 mr-2 text-warning" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                                </svg>
+                                                Request to book
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="flex items-center justify-between">
+                                        <div class="flex items-center space-x-4 text-sm text-text-muted">
+                                            <span class="flex items-center">
+                                                <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192L5.636 18.364M12 2.25a9.75 9.75 0 100 19.5 9.75 9.75 0 000-19.5z"/>
+                                                </svg>
+                                                Non-smoking
+                                            </span>
+                                            <span class="text-success font-medium">85% compatibility</span>
+                                        </div>
+                                        <div class="flex space-x-2">
+                                            <button class="px-4 py-2 text-sm border border-border rounded-lg hover:bg-gray-50 transition-colors message-btn">
+                                                Message
+                                            </button>
+                                            <button class="btn-primary text-sm px-6 py-2 request-btn">
+                                                Request
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Regular Ride Card 2 -->
+                        <div class="bg-surface rounded-lg shadow-campus border border-border p-6 ride-card" data-price="18" data-campus="usc" data-time="afternoon" data-preferences="music,pets">
+                            <div class="flex items-start space-x-4">
+                                <img 
+                                    src="https://images.unsplash.com/photo-1692024058356-2c5b9538449e" 
+                                    alt="Emma Lopez, USC student with curly hair smiling warmly"
+                                    class="w-16 h-16 rounded-full object-cover"
+                                    onerror="this.src='https://images.pixabay.com/photo/2016/11/21/12/42/beard-1845166_1280.jpg'; this.onerror=null;"
+                                >
+                                <div class="flex-1">
+                                    <div class="flex items-center justify-between mb-2">
+                                        <div>
+                                            <h3 class="font-semibold text-text-primary">Emma L.</h3>
+                                            <p class="text-sm text-text-secondary">USC, Junior • 4.7 ⭐ (56 rides)</p>
+                                        </div>
+                                        <div class="text-right">
+                                            <div class="text-2xl font-bold text-primary">$18</div>
+                                            <div class="text-sm text-text-secondary">per person</div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="grid md:grid-cols-2 gap-4 mb-4">
+                                        <div>
+                                            <div class="flex items-center text-sm text-text-secondary mb-1">
+                                                <svg class="w-4 h-4 mr-2 text-success" fill="currentColor" viewBox="0 0 20 20">
+                                                    <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
+                                                </svg>
+                                                USC Campus → LAX Airport
+                                            </div>
+                                            <div class="flex items-center text-sm text-text-secondary">
+                                                <svg class="w-4 h-4 mr-2 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                                </svg>
+                                                Today, 4:00 PM
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div class="flex items-center text-sm text-text-secondary mb-1">
+                                                <svg class="w-4 h-4 mr-2 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 515.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+                                                </svg>
+                                                3 seats available
+                                            </div>
+                                            <div class="flex items-center text-sm text-text-secondary">
+                                                <svg class="w-4 h-4 mr-2 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                                </svg>
+                                                Instant booking
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="flex items-center justify-between">
+                                        <div class="flex items-center space-x-4 text-sm text-text-muted">
+                                            <span class="flex items-center">
+                                                <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3"/>
+                                                </svg>
+                                                Music OK
+                                            </span>
+                                            <span class="flex items-center">
+                                                <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                                                </svg>
+                                                Pets OK
+                                            </span>
+                                            <span class="text-success font-medium">92% compatibility</span>
+                                        </div>
+                                        <div class="flex space-x-2">
+                                            <button class="px-4 py-2 text-sm border border-border rounded-lg hover:bg-gray-50 transition-colors message-btn">
+                                                Message
+                                            </button>
+                                            <button class="btn-primary text-sm px-6 py-2 book-btn">
+                                                Book Ride
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Event Ride Card -->
+                        <div class="bg-gradient-to-r from-secondary-50 to-accent-50 rounded-lg shadow-campus border border-secondary-200 p-6 ride-card" data-price="8" data-campus="usc" data-time="evening" data-preferences="group,music">
+                            <div class="flex items-center mb-4">
+                                <svg class="w-5 h-5 text-secondary mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                                </svg>
+                                <span class="font-medium text-secondary">Event Ride</span>
+                                <span class="ml-2 inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-secondary-100 text-secondary-600">
+                                    Group Booking
+                                </span>
+                            </div>
+                            
+                            <div class="flex items-start space-x-4">
+                                <img 
+                                    src="https://images.unsplash.com/photo-1672790863632-89076d9867e9" 
+                                    alt="Taylor Rodriguez, USC student organizing group ride"
+                                    class="w-16 h-16 rounded-full object-cover"
+                                    onerror="this.src='https://images.pixabay.com/photo/2016/11/21/12/42/beard-1845166_1280.jpg'; this.onerror=null;"
+                                >
+                                <div class="flex-1">
+                                    <div class="flex items-center justify-between mb-2">
+                                        <div>
+                                            <h3 class="font-semibold text-text-primary">Taylor R. + 3 others</h3>
+                                            <p class="text-sm text-text-secondary">USC Basketball Game • Tonight 7:00 PM</p>
+                                        </div>
+                                        <div class="text-right">
+                                            <div class="text-2xl font-bold text-primary">$8</div>
+                                            <div class="text-sm text-text-secondary">per person</div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="grid md:grid-cols-2 gap-4 mb-4">
+                                        <div>
+                                            <div class="flex items-center text-sm text-text-secondary mb-1">
+                                                <svg class="w-4 h-4 mr-2 text-success" fill="currentColor" viewBox="0 0 20 20">
+                                                    <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
+                                                </svg>
+                                                USC Campus → Staples Center
+                                            </div>
+                                            <div class="flex items-center text-sm text-text-secondary">
+                                                <svg class="w-4 h-4 mr-2 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                                </svg>
+                                                Today, 5:30 PM
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div class="flex items-center text-sm text-text-secondary mb-1">
+                                                <svg class="w-4 h-4 mr-2 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 515.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+                                                </svg>
+                                                2 seats left
+                                            </div>
+                                            <div class="flex items-center text-sm text-text-secondary">
+                                                <svg class="w-4 h-4 mr-2 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                                </svg>
+                                                Return trip included
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="flex items-center justify-between">
+                                        <div class="flex items-center space-x-4 text-sm text-text-muted">
+                                            <span class="flex items-center">
+                                                <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3"/>
+                                                </svg>
+                                                Game atmosphere
+                                            </span>
+                                            <span class="flex items-center">
+                                                <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 515.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 919.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+                                                </svg>
+                                                Group of friends
+                                            </span>
+                                        </div>
+                                        <div class="flex space-x-2">
+                                            <button class="px-4 py-2 text-sm border border-border rounded-lg hover:bg-gray-50 transition-colors">
+                                                View Event
+                                            </button>
+                                            <button class="btn-secondary text-sm px-6 py-2 join-group-btn">
+                                                Join Group
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Load More -->
+                    <div class="text-center mt-8">
+                        <button id="loadMoreBtn" class="btn-primary px-8 py-3">
+                            Load More Rides
+                        </button>
+                        <p class="text-sm text-text-muted mt-2">Showing <span id="showingCount">3</span> of <span id="totalCount">12</span> available rides</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Actions Floating Bar -->
+    <div class="fixed bottom-6 right-6 z-40">
+        <div class="flex flex-col space-y-3">
+            <button id="floatingOfferBtn" class="bg-primary text-white p-4 rounded-full shadow-campus-md hover:bg-primary-700 transition-all duration-300 group">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
+                </svg>
+                <span class="absolute right-16 top-1/2 transform -translate-y-1/2 bg-text-primary text-white px-3 py-1 rounded-lg text-sm opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
+                    Offer a Ride
+                </span>
+            </button>
+            <button id="floatingMessagesBtn" class="bg-secondary text-white p-4 rounded-full shadow-campus-md hover:bg-secondary-700 transition-all duration-300 group">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+                </svg>
+                <span class="absolute right-16 top-1/2 transform -translate-y-1/2 bg-text-primary text-white px-3 py-1 rounded-lg text-sm opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
+                    Messages
+                </span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-text-primary text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <!-- Brand -->
+                <div class="md:col-span-1">
+                    <div class="flex items-center space-x-2 mb-4">
+                        <svg class="w-8 h-8 text-primary" viewBox="0 0 32 32" fill="currentColor">
+                            <circle cx="16" cy="8" r="6" opacity="0.8"/>
+                            <circle cx="8" cy="20" r="4" opacity="0.6"/>
+                            <circle cx="24" cy="20" r="4" opacity="0.6"/>
+                            <path d="M12 18c2-2 6-2 8 0" stroke="currentColor" stroke-width="2" fill="none"/>
+                        </svg>
+                        <span class="text-xl font-bold">UniCircle</span>
+                    </div>
+                    <p class="text-gray-400 text-sm">
+                        Connecting USC students through safe, affordable, and community-driven ridesharing.
+                    </p>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="font-semibold mb-4">Platform</h3>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="ride_finder.html" class="hover:text-white transition-colors">Find Rides</a></li>
+                        <li><a href="ride_finder.html" class="hover:text-white transition-colors">Offer Rides</a></li>
+                        <li><a href="profile_management.html" class="hover:text-white transition-colors">My Profile</a></li>
+                        <li><a href="javascript:void(0)" class="hover:text-white transition-colors">Safety Center</a></li>
+                    </ul>
+                </div>
+
+                <!-- Support -->
+                <div>
+                    <h3 class="font-semibold mb-4">Support</h3>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="javascript:void(0)" class="hover:text-white transition-colors">Help Center</a></li>
+                        <li><a href="javascript:void(0)" class="hover:text-white transition-colors">Community Guidelines</a></li>
+                        <li><a href="javascript:void(0)" class="hover:text-white transition-colors">Contact Us</a></li>
+                        <li><a href="javascript:void(0)" class="hover:text-white transition-colors">Report Issue</a></li>
+                    </ul>
+                </div>
+
+                <!-- Legal -->
+                <div>
+                    <h3 class="font-semibold mb-4">Legal</h3>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="javascript:void(0)" class="hover:text-white transition-colors">Privacy Policy</a></li>
+                        <li><a href="javascript:void(0)" class="hover:text-white transition-colors">Terms of Service</a></li>
+                        <li><a href="javascript:void(0)" class="hover:text-white transition-colors">Cookie Policy</a></li>
+                        <li><a href="javascript:void(0)" class="hover:text-white transition-colors">Accessibility</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-700 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-sm text-gray-400">
+                    © 2025 UniCircle. All Rights Reserved.
+                </p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="javascript:void(0)" class="text-gray-400 hover:text-white transition-colors">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
+                        </svg>
+                    </a>
+                    <a href="javascript:void(0)" class="text-gray-400 hover:text-white transition-colors">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z"/>
+                        </svg>
+                    </a>
+                    <a href="javascript:void(0)" class="text-gray-400 hover:text-white transition-colors">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.174-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.347-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.402.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.357-.629-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24.009 12.017 24.009c6.624 0 11.99-5.367 11.99-11.988C24.007 5.367 18.641.001.012.001z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+<script>
+// Enhanced Ride Finder with Full Filter Functionality
+class RideFinderApp {
+    constructor() {
+        this.currentView = 'search';
+        this.searchFilters = {
+            priceRange: ['0-15'],
+            campus: ['usc'],
+            timeRange: ['afternoon'],
+            vehicleType: [],
+            preferences: []
+        };
+        this.currentResults = [];
+        this.allRides = [];
+        this.init();
+    }
+
+    init() {
+        this.bindSearchEvents();
+        this.bindActionButtons();
+        this.bindFilterEvents();
+        this.bindViewControls();
+        this.checkUrlParams();
+        this.loadAllRides();
+    }
+
+    loadAllRides() {
+        // Simulate loading all available rides
+        this.allRides = [
+            {
+                id: 1,
+                driver: 'Sarah M.',
+                price: 12,
+                campus: 'usc',
+                time: 'afternoon',
+                preferences: ['music', 'nonsmoking'],
+                vehicleType: 'sedan',
+                rating: 4.9,
+                element: document.querySelectorAll('.ride-card')[0]
+            },
+            {
+                id: 2,
+                driver: 'Marcus J.',
+                price: 15,
+                campus: 'usc',
+                time: 'afternoon',
+                preferences: ['nonsmoking'],
+                vehicleType: 'sedan',
+                rating: 4.8,
+                element: document.querySelectorAll('.ride-card')[1]
+            },
+            {
+                id: 3,
+                driver: 'Emma L.',
+                price: 18,
+                campus: 'usc',
+                time: 'afternoon',
+                preferences: ['music', 'pets'],
+                vehicleType: 'suv',
+                rating: 4.7,
+                element: document.querySelectorAll('.ride-card')[2]
+            },
+            {
+                id: 4,
+                driver: 'Taylor R.',
+                price: 8,
+                campus: 'usc',
+                time: 'evening',
+                preferences: ['group', 'music'],
+                vehicleType: 'suv',
+                rating: 4.6,
+                element: document.querySelectorAll('.ride-card')[3]
+            }
+        ];
+    }
+
+    checkUrlParams() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const route = urlParams.get('route');
+        const offer = urlParams.get('offer');
+        const campus = urlParams.get('campus');
+
+        if (route) this.prefillRouteData(route);
+        if (offer) this.switchToOfferMode();
+        if (campus) this.prefillCampusData(campus);
+    }
+
+    prefillRouteData(routeName) {
+        const parts = routeName.split(' ↔ ');
+        if (parts.length === 2) {
+            const fromInput = document.getElementById('fromLocation');
+            const toInput = document.getElementById('toLocation');
+            
+            if (fromInput) fromInput.value = parts[0];
+            if (toInput) toInput.value = parts[1];
+        }
+    }
+
+    prefillCampusData(campusName) {
+        const fromInput = document.getElementById('fromLocation');
+        if (fromInput && campusName.includes('USC')) {
+            fromInput.value = campusName;
+        }
+    }
+
+    bindSearchEvents() {
+        // Search button
+        const searchButton = document.getElementById('searchRidesBtn');
+        searchButton?.addEventListener('click', (e) => {
+            e.preventDefault();
+            this.performSearch();
+        });
+
+        // Enter key on search inputs
+        const searchInputs = document.querySelectorAll('#fromLocation, #toLocation, #searchDate, #searchTime');
+        searchInputs.forEach(input => {
+            input.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') {
+                    this.performSearch();
+                }
+            });
+        });
+    }
+
+    bindActionButtons() {
+        // Offer ride buttons
+        document.getElementById('offerRideBtn')?.addEventListener('click', () => this.showOfferRideModal());
+        document.getElementById('floatingOfferBtn')?.addEventListener('click', () => this.showOfferRideModal());
+
+        // Messages button
+        document.getElementById('floatingMessagesBtn')?.addEventListener('click', () => this.showMessagesModal());
+
+        // Book ride buttons
+        document.querySelectorAll('.book-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                const rideCard = e.target.closest('.ride-card');
+                this.handleBookRide(rideCard);
+            });
+        });
+
+        // Request buttons
+        document.querySelectorAll('.request-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                const rideCard = e.target.closest('.ride-card');
+                this.handleRequestRide(rideCard);
+            });
+        });
+
+        // Message buttons
+        document.querySelectorAll('.message-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                const rideCard = e.target.closest('.ride-card');
+                this.handleMessage(rideCard);
+            });
+        });
+
+        // Join group buttons
+        document.querySelectorAll('.join-group-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                const rideCard = e.target.closest('.ride-card');
+                this.handleJoinGroup(rideCard);
+            });
+        });
+    }
+
+    bindFilterEvents() {
+        // All filter checkboxes
+        const filterInputs = document.querySelectorAll('#filtersPanel input[type="checkbox"]');
+        filterInputs.forEach(input => {
+            input.addEventListener('change', () => {
+                this.updateFilters();
+                this.applyFilters();
+            });
+        });
+
+        // Apply filters button
+        document.getElementById('applyFiltersBtn')?.addEventListener('click', () => {
+            this.applyFilters();
+        });
+
+        // Reset filters button
+        document.getElementById('resetFiltersBtn')?.addEventListener('click', () => {
+            this.resetFilters();
+        });
+
+        // Advanced filters button
+        document.getElementById('advancedFiltersBtn')?.addEventListener('click', () => {
+            this.showAdvancedFiltersModal();
+        });
+
+        // Sort dropdown
+        document.getElementById('sortResults')?.addEventListener('change', (e) => {
+            this.sortResults(e.target.value);
+        });
+    }
+
+    bindViewControls() {
+        // View toggle buttons
+        document.getElementById('listViewBtn')?.addEventListener('click', () => {
+            this.switchView('list');
+        });
+
+        document.getElementById('gridViewBtn')?.addEventListener('click', () => {
+            this.switchView('grid');
+        });
+
+        // Load more button
+        document.getElementById('loadMoreBtn')?.addEventListener('click', () => {
+            this.loadMoreResults();
+        });
+    }
+
+    updateFilters() {
+        // Collect current filter state
+        this.searchFilters = {
+            priceRange: [],
+            campus: [],
+            timeRange: [],
+            vehicleType: [],
+            preferences: []
+        };
+
+        // Get all checked filter inputs
+        const checkedInputs = document.querySelectorAll('#filtersPanel input[type="checkbox"]:checked');
+        checkedInputs.forEach(input => {
+            const filterType = input.name;
+            const value = input.value;
+            
+            if (this.searchFilters[filterType]) {
+                this.searchFilters[filterType].push(value);
+            }
+        });
+    }
+
+    applyFilters() {
+        const rideCards = document.querySelectorAll('.ride-card');
+        let visibleCount = 0;
+
+        rideCards.forEach(card => {
+            let shouldShow = true;
+
+            // Price filter
+            if (this.searchFilters.priceRange.length > 0) {
+                const cardPrice = parseInt(card.dataset.price);
+                let priceMatch = false;
+                
+                this.searchFilters.priceRange.forEach(range => {
+                    if (range === '0-15' && cardPrice <= 15) priceMatch = true;
+                    if (range === '15-25' && cardPrice >= 15 && cardPrice <= 25) priceMatch = true;
+                    if (range === '25-40' && cardPrice >= 25 && cardPrice <= 40) priceMatch = true;
+                    if (range === '40+' && cardPrice > 40) priceMatch = true;
+                });
+                
+                if (!priceMatch) shouldShow = false;
+            }
+
+            // Campus filter
+            if (this.searchFilters.campus.length > 0) {
+                const cardCampus = card.dataset.campus;
+                if (!this.searchFilters.campus.includes(cardCampus)) {
+                    shouldShow = false;
+                }
+            }
+
+            // Time filter
+            if (this.searchFilters.timeRange.length > 0) {
+                const cardTime = card.dataset.time;
+                if (!this.searchFilters.timeRange.includes(cardTime)) {
+                    shouldShow = false;
+                }
+            }
+
+            // Preferences filter
+            if (this.searchFilters.preferences.length > 0) {
+                const cardPrefs = card.dataset.preferences ? card.dataset.preferences.split(',') : [];
+                let prefMatch = false;
+                
+                this.searchFilters.preferences.forEach(pref => {
+                    if (cardPrefs.includes(pref)) prefMatch = true;
+                });
+                
+                if (this.searchFilters.preferences.length > 0 && !prefMatch) {
+                    shouldShow = false;
+                }
+            }
+
+            // Show/hide card with animation
+            if (shouldShow) {
+                card.style.display = 'block';
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                
+                setTimeout(() => {
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                    card.style.transition = 'all 0.3s ease';
+                }, visibleCount * 50);
+                
+                visibleCount++;
+            } else {
+                card.style.display = 'none';
+            }
+        });
+
+        // Update results count
+        document.getElementById('resultsCount').textContent = `Found ${visibleCount} rides matching your criteria`;
+        document.getElementById('showingCount').textContent = visibleCount;
+        document.getElementById('totalCount').textContent = visibleCount;
+
+        // Show notification about filter results
+        if (visibleCount === 0) {
+            this.showNotification('No rides match your current filters. Try adjusting your criteria.', 'info');
+        } else if (visibleCount < 4) {
+            this.showNotification(`Filters applied: ${visibleCount} rides found`, 'success');
+        }
+    }
+
+    resetFilters() {
+        // Uncheck all filters
+        const filterInputs = document.querySelectorAll('#filtersPanel input[type="checkbox"]');
+        filterInputs.forEach(input => {
+            input.checked = false;
+        });
+
+        // Reset to default filters
+        document.querySelector('input[name="priceRange"][value="0-15"]').checked = true;
+        document.querySelector('input[name="campus"][value="usc"]').checked = true;
+        document.querySelector('input[name="timeRange"][value="afternoon"]').checked = true;
+
+        this.updateFilters();
+        this.applyFilters();
+        this.showNotification('Filters reset to default', 'info');
+    }
+
+    sortResults(sortBy) {
+        const rideCards = Array.from(document.querySelectorAll('.ride-card'));
+        const container = document.getElementById('rideResults');
+
+        // Sort rides based on criteria
+        rideCards.sort((a, b) => {
+            switch (sortBy) {
+                case 'priceLowHigh':
+                    return parseInt(a.dataset.price) - parseInt(b.dataset.price);
+                case 'priceHighLow':
+                    return parseInt(b.dataset.price) - parseInt(a.dataset.price);
+                case 'rating':
+                    const aRating = parseFloat(a.querySelector('.text-text-secondary').textContent.match(/(\d+\.\d+)/)?.[0] || '0');
+                    const bRating = parseFloat(b.querySelector('.text-text-secondary').textContent.match(/(\d+\.\d+)/)?.[0] || '0');
+                    return bRating - aRating;
+                case 'departureTime':
+                    // Sort by time mentioned in the card
+                    return 0; // Simplified for demo
+                case 'bestMatch':
+                default:
+                    // Keep original order for best match
+                    return 0;
+            }
+        });
+
+        // Remove all cards and re-add in sorted order
+        rideCards.forEach(card => card.remove());
+        rideCards.forEach(card => container.appendChild(card));
+
+        this.showNotification(`Results sorted by ${sortBy.replace(/([A-Z])/g, ' $1').toLowerCase()}`, 'info');
+    }
+
+    performSearch() {
+        const fromLocation = document.getElementById('fromLocation').value;
+        const toLocation = document.getElementById('toLocation').value;
+        const date = document.getElementById('searchDate').value;
+        const time = document.getElementById('searchTime').value;
+
+        if (!fromLocation || !toLocation) {
+            this.showNotification('Please enter both pickup and destination locations', 'error');
+            return;
+        }
+
+        this.showLoadingState();
+
+        setTimeout(() => {
+            this.displaySearchResults({
+                from: fromLocation,
+                to: toLocation,
+                date: date,
+                time: time
+            });
+            this.hideLoadingState();
+            this.applyFilters(); // Apply current filters to new results
+        }, 1500);
+    }
+
+    showLoadingState() {
+        const resultsSection = document.querySelector('.lg\\:col-span-3');
+        this.originalResultsContent = resultsSection.innerHTML;
+        
+        resultsSection.innerHTML = `
+            <div class="flex items-center justify-center py-20">
+                <div class="text-center">
+                    <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-primary mx-auto mb-4"></div>
+                    <p class="text-text-secondary">Searching for the best ride matches...</p>
+                </div>
+            </div>
+        `;
+    }
+
+    hideLoadingState() {
+        const resultsSection = document.querySelector('.lg\\:col-span-3');
+        if (this.originalResultsContent) {
+            resultsSection.innerHTML = this.originalResultsContent;
+            this.bindActionButtons();
+            this.bindViewControls();
+        }
+    }
+
+    displaySearchResults(searchParams) {
+        this.showNotification(`Found updated rides from ${searchParams.from} to ${searchParams.to}`, 'success');
+        
+        const resultsCount = document.getElementById('resultsCount');
+        if (resultsCount) {
+            resultsCount.textContent = `Found 15 rides matching your search criteria`;
+        }
+
+        this.highlightMatchingRides();
+    }
+
+    highlightMatchingRides() {
+        const rideCards = document.querySelectorAll('.ride-card');
+        rideCards.forEach((card, index) => {
+            card.style.transform = 'scale(0.98)';
+            card.style.opacity = '0.8';
+            
+            setTimeout(() => {
+                card.style.transform = 'scale(1)';
+                card.style.opacity = '1';
+                card.style.transition = 'all 0.3s ease';
+                
+                if (index === 0) {
+                    card.classList.add('ring-2', 'ring-primary-200');
+                }
+            }, index * 100);
+        });
+    }
+
+    switchView(viewType) {
+        const listBtn = document.getElementById('listViewBtn');
+        const gridBtn = document.getElementById('gridViewBtn');
+        const rideResults = document.getElementById('rideResults');
+
+        if (viewType === 'list') {
+            listBtn.classList.add('bg-primary', 'text-white');
+            listBtn.classList.remove('text-text-secondary');
+            gridBtn.classList.add('text-text-secondary');
+            gridBtn.classList.remove('bg-primary', 'text-white');
+            rideResults.className = 'space-y-4';
+        } else {
+            gridBtn.classList.add('bg-primary', 'text-white');
+            gridBtn.classList.remove('text-text-secondary');
+            listBtn.classList.add('text-text-secondary');
+            listBtn.classList.remove('bg-primary', 'text-white');
+            rideResults.className = 'grid md:grid-cols-2 gap-4';
+        }
+    }
+
+    loadMoreResults() {
+        const loadMoreBtn = document.getElementById('loadMoreBtn');
+        loadMoreBtn.innerHTML = `
+            <div class="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-2 inline-block"></div>
+            Loading more rides...
+        `;
+        loadMoreBtn.disabled = true;
+
+        setTimeout(() => {
+            this.showNotification('All available rides are already displayed', 'info');
+            loadMoreBtn.innerHTML = 'All Rides Loaded';
+            setTimeout(() => {
+                loadMoreBtn.innerHTML = 'Load More Rides';
+                loadMoreBtn.disabled = false;
+            }, 2000);
+        }, 1000);
+    }
+
+    showOfferRideModal() {
+        const content = `
+            <form onsubmit="rideFinderApp.handleOfferRide(event)" class="space-y-6">
+                <div class="bg-primary-50 rounded-lg p-4">
+                    <h3 class="font-semibold text-primary mb-2">Offer a Ride</h3>
+                    <p class="text-sm text-text-secondary">Share your ride and help fellow students while earning gas money!</p>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-sm font-medium text-text-primary mb-2">Pickup Location</label>
+                        <div class="relative">
+                            <input type="text" name="pickupLocation" required placeholder="USC Main Campus, USC Village..." 
+                                   class="w-full px-4 py-3 pl-10 border border-border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500">
+                            <svg class="w-5 h-5 text-text-muted absolute left-3 top-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-text-primary mb-2">Destination</label>
+                        <div class="relative">
+                            <input type="text" name="destination" required placeholder="LAX Terminal 1, Santa Monica Pier..." 
+                                   class="w-full px-4 py-3 pl-10 border border-border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500">
+                            <svg class="w-5 h-5 text-text-muted absolute left-3 top-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div>
+                        <label class="block text-sm font-medium text-text-primary mb-2">Date</label>
+                        <input type="date" name="rideDate" required class="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500">
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-text-primary mb-2">Departure Time</label>
+                        <input type="time" name="departureTime" required class="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500">
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-text-primary mb-2">Available Seats</label>
+                        <select name="availableSeats" required class="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500">
+                            <option value="">Select seats</option>
+                            <option value="1">1 seat</option>
+                            <option value="2">2 seats</option>
+                            <option value="3">3 seats</option>
+                            <option value="4">4 seats</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-sm font-medium text-text-primary mb-2">Price per Person ($)</label>
+                        <input type="number" name="pricePerPerson" required min="5" max="100" placeholder="15" 
+                               class="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500">
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-text-primary mb-2">Vehicle Type</label>
+                        <select name="vehicleType" required class="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500">
+                            <option value="">Select vehicle</option>
+                            <option value="sedan">Sedan</option>
+                            <option value="suv">SUV</option>
+                            <option value="hatchback">Hatchback</option>
+                            <option value="truck">Pickup Truck</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-sm font-medium text-text-primary mb-2">Ride Preferences</label>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <label class="flex items-center">
+                            <input type="checkbox" name="ridePreferences" value="music" class="rounded border-border text-primary focus:ring-primary-500">
+                            <span class="ml-2 text-sm">Music allowed</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="checkbox" name="ridePreferences" value="pets" class="rounded border-border text-primary focus:ring-primary-500">
+                            <span class="ml-2 text-sm">Pets allowed</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="checkbox" name="ridePreferences" value="nonsmoking" class="rounded border-border text-primary focus:ring-primary-500">
+                            <span class="ml-2 text-sm">Non-smoking only</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="checkbox" name="ridePreferences" value="conversation" class="rounded border-border text-primary focus:ring-primary-500">
+                            <span class="ml-2 text-sm">Open to conversation</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-sm font-medium text-text-primary mb-2">Additional Notes</label>
+                    <textarea name="notes" rows="3" placeholder="Meeting point details, any special requirements..." 
+                              class="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"></textarea>
+                </div>
+
+                <div class="flex space-x-4 pt-4">
+                    <button type="submit" class="btn-primary flex-1">Post Ride Offer</button>
+                    <button type="button" onclick="rideFinderApp.closeModal()" class="btn-secondary flex-1">Cancel</button>
+                </div>
+            </form>
+        `;
+
+        this.showModal(content, 'Offer a Ride to Fellow Students');
+    }
+
+    handleOfferRide(event) {
+        event.preventDefault();
+        const formData = new FormData(event.target);
+        
+        const offerData = {
+            pickupLocation: formData.get('pickupLocation'),
+            destination: formData.get('destination'),
+            rideDate: formData.get('rideDate'),
+            departureTime: formData.get('departureTime'),
+            availableSeats: formData.get('availableSeats'),
+            pricePerPerson: formData.get('pricePerPerson'),
+            vehicleType: formData.get('vehicleType')
+        };
+
+        this.showNotification('Ride offer posted successfully! Students can now book rides with you.', 'success');
+        this.closeModal();
+    }
+
+    handleBookRide(rideCard) {
+        const riderName = rideCard.querySelector('h3').textContent;
+        const price = rideCard.querySelector('.text-2xl.font-bold').textContent;
+        
+        this.showBookingModal(riderName, price);
+    }
+
+    handleRequestRide(rideCard) {
+        const riderName = rideCard.querySelector('h3').textContent;
+        this.showNotification(`Ride request sent to ${riderName}. They'll respond within 30 minutes.`, 'success');
+    }
+
+    handleMessage(rideCard) {
+        const riderName = rideCard.querySelector('h3').textContent;
+        this.showMessagesModal(riderName);
+    }
+
+    handleJoinGroup(rideCard) {
+        const groupName = rideCard.querySelector('.font-semibold').textContent;
+        this.showNotification(`Request sent to join ${groupName}'s group ride!`, 'success');
+    }
+
+    showBookingModal(riderName, price) {
+        const content = `
+            <div class="space-y-6">
+                <div class="bg-primary-50 rounded-lg p-4">
+                    <h3 class="font-semibold text-primary mb-2">Confirm Booking</h3>
+                    <p class="text-sm text-text-secondary">Book a ride with ${riderName} for ${price} per person</p>
+                </div>
+
+                <form onsubmit="rideFinderApp.confirmBooking(event, '${riderName}', '${price}')" class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-medium text-text-primary mb-2">Number of Passengers</label>
+                        <select name="passengers" required class="w-full px-4 py-3 border border-border rounded-lg">
+                            <option value="">Select passengers</option>
+                            <option value="1">1 passenger (just me)</option>
+                            <option value="2">2 passengers</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-text-primary mb-2">Phone Number</label>
+                        <input type="tel" name="phoneNumber" required placeholder="Your contact number" 
+                               class="w-full px-4 py-3 border border-border rounded-lg">
+                    </div>
+
+                    <div class="flex space-x-4 pt-4">
+                        <button type="submit" class="btn-primary flex-1">Confirm Booking</button>
+                        <button type="button" onclick="rideFinderApp.closeModal()" class="btn-secondary flex-1">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        `;
+
+        this.showModal(content, 'Book Your Ride');
+    }
+
+    confirmBooking(event, riderName, price) {
+        event.preventDefault();
+        this.showNotification(`Ride booked successfully! ${riderName} will contact you soon.`, 'success');
+        this.closeModal();
+    }
+
+    showMessagesModal(riderName = null) {
+        const content = `
+            <div class="space-y-6">
+                <div class="bg-primary-50 rounded-lg p-4">
+                    <h3 class="font-semibold text-primary mb-2">Messages</h3>
+                    <p class="text-sm text-text-secondary">${riderName ? `Chat with ${riderName}` : 'Your ride conversations'}</p>
+                </div>
+
+                ${riderName ? `
+                    <div class="border border-border rounded-lg p-4">
+                        <div class="flex items-center mb-3">
+                            <div class="w-10 h-10 bg-primary-100 rounded-full flex items-center justify-center">
+                                <span class="text-primary font-semibold">${riderName.charAt(0)}</span>
+                            </div>
+                            <div class="ml-3">
+                                <p class="font-medium text-text-primary">${riderName}</p>
+                                <p class="text-sm text-text-secondary">USC → LAX Airport</p>
+                            </div>
+                        </div>
+                        
+                        <div class="space-y-3 mb-4 max-h-40 overflow-y-auto">
+                            <div class="text-right">
+                                <div class="inline-block bg-primary text-white rounded-lg px-3 py-2 text-sm">
+                                    Hi! I'm interested in your ride today.
+                                </div>
+                                <p class="text-xs text-text-muted mt-1">Just now</p>
+                            </div>
+                        </div>
+                        
+                        <form onsubmit="rideFinderApp.sendMessage(event, '${riderName}')" class="flex space-x-2">
+                            <input type="text" name="message" placeholder="Type your message..." required class="flex-1 px-3 py-2 border border-border rounded-lg">
+                            <button type="submit" class="btn-primary px-4 py-2">Send</button>
+                        </form>
+                    </div>
+                ` : `
+                    <div class="text-center text-text-secondary py-8">
+                        <p>No messages yet. Start by booking a ride!</p>
+                    </div>
+                `}
+
+                <div class="flex justify-end pt-4 border-t border-border">
+                    <button onclick="rideFinderApp.closeModal()" class="btn-secondary">Close</button>
+                </div>
+            </div>
+        `;
+
+        this.showModal(content, 'Messages');
+    }
+
+    sendMessage(event, riderName) {
+        event.preventDefault();
+        const message = event.target.message.value;
+        // Add message functionality here
+        event.target.message.value = '';
+        this.showNotification('Message sent!', 'success');
+    }
+
+    showAdvancedFiltersModal() {
+        const content = `
+            <div class="space-y-6">
+                <div class="bg-primary-50 rounded-lg p-4">
+                    <h3 class="font-semibold text-primary mb-2">Advanced Filters</h3>
+                    <p class="text-sm text-text-secondary">Fine-tune your ride search with detailed preferences</p>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <h4 class="font-medium text-text-primary mb-3">Distance Radius</h4>
+                        <select class="w-full input-field">
+                            <option>Within 5 miles</option>
+                            <option>Within 10 miles</option>
+                            <option>Within 15 miles</option>
+                            <option>Any distance</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <h4 class="font-medium text-text-primary mb-3">Rating Minimum</h4>
+                        <select class="w-full input-field">
+                            <option>Any rating</option>
+                            <option>4.0+ stars</option>
+                            <option>4.5+ stars</option>
+                            <option>4.8+ stars</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="font-medium text-text-primary mb-3">Special Requirements</h4>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <label class="flex items-center">
+                            <input type="checkbox" class="rounded border-border text-primary">
+                            <span class="ml-2 text-sm">Wheelchair accessible</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="checkbox" class="rounded border-border text-primary">
+                            <span class="ml-2 text-sm">Child car seat available</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="checkbox" class="rounded border-border text-primary">
+                            <span class="ml-2 text-sm">Large luggage space</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="checkbox" class="rounded border-border text-primary">
+                            <span class="ml-2 text-sm">Air conditioning</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="flex space-x-4 pt-4">
+                    <button onclick="rideFinderApp.applyAdvancedFilters()" class="btn-primary flex-1">Apply Advanced Filters</button>
+                    <button onclick="rideFinderApp.closeModal()" class="btn-secondary flex-1">Close</button>
+                </div>
+            </div>
+        `;
+
+        this.showModal(content, 'Advanced Filters');
+    }
+
+    applyAdvancedFilters() {
+        this.showNotification('Advanced filters applied successfully!', 'success');
+        this.closeModal();
+        this.applyFilters();
+    }
+
+    switchToOfferMode() {
+        this.currentView = 'offer';
+        this.showOfferRideModal();
+    }
+
+    // Modal system
+    showModal(content, title = '') {
+        let overlay = document.getElementById('ride-modal-overlay');
+        if (!overlay) {
+            overlay = document.createElement('div');
+            overlay.id = 'ride-modal-overlay';
+            overlay.className = 'fixed inset-0 bg-black bg-opacity-50 z-50 hidden';
+            overlay.innerHTML = `
+                <div class="flex items-center justify-center min-h-screen p-4">
+                    <div id="ride-modal-content" class="bg-surface rounded-lg shadow-campus-lg max-w-3xl w-full max-h-[90vh] overflow-y-auto">
+                        <!-- Modal content will be inserted here -->
+                    </div>
+                </div>
+            `;
+            document.body.appendChild(overlay);
+
+            overlay.addEventListener('click', (e) => {
+                if (e.target === overlay) {
+                    this.closeModal();
+                }
+            });
+        }
+
+        const modalContent = document.getElementById('ride-modal-content');
+        modalContent.innerHTML = `
+            <div class="p-6">
+                <div class="flex items-center justify-between mb-6">
+                    <h2 class="text-2xl font-bold text-text-primary">${title}</h2>
+                    <button onclick="rideFinderApp.closeModal()" class="text-text-secondary hover:text-text-primary p-2">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                        </svg>
+                    </button>
+                </div>
+                ${content}
+            </div>
+        `;
+        
+        overlay.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+    }
+
+    closeModal() {
+        const overlay = document.getElementById('ride-modal-overlay');
+        if (overlay) {
+            overlay.classList.add('hidden');
+            document.body.style.overflow = '';
+        }
+    }
+
+    showNotification(message, type = 'info') {
+        const notification = document.createElement('div');
+        notification.className = `fixed top-4 right-4 z-50 p-4 rounded-lg shadow-campus-md max-w-sm transform transition-all duration-300 translate-x-full`;
+        
+        const bgColor = type === 'success' ? 'bg-success' : type === 'error' ? 'bg-error' : 'bg-primary';
+        notification.classList.add(bgColor, 'text-white');
+        
+        notification.innerHTML = `
+            <div class="flex items-center">
+                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+                <span>${message}</span>
+            </div>
+        `;
+        
+        document.body.appendChild(notification);
+        
+        setTimeout(() => notification.classList.remove('translate-x-full'), 100);
+        setTimeout(() => {
+            notification.classList.add('translate-x-full');
+            setTimeout(() => document.body.contains(notification) && document.body.removeChild(notification), 300);
+        }, 5000);
+    }
+}
+
+// Initialize the enhanced ride finder app
+const rideFinderApp = new RideFinderApp();
+
+// ESC key to close modal
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        rideFinderApp.closeModal();
+    }
+});
+</script>
+<script id="dhws-dataInjector" src="../public/dhws-data-injector.js"></script>
+</body>
+</html>

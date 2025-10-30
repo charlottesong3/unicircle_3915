@@ -1,0 +1,1142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UniCircle - Your Campus Community, Connected</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+  <script type="module" src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Funicircle6277back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.9"></script>
+  <script type="module" src="https://static.rocket.new/rocket-shot.js?v=0.0.1"></script>
+  </head>
+<body class="bg-background min-h-screen">
+    <!-- Navigation Header -->
+    <header class="bg-surface shadow-campus-sm sticky top-0 z-50">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <a href="homepage.html" class="flex items-center space-x-2">
+                        <svg class="w-8 h-8 text-primary" viewBox="0 0 32 32" fill="currentColor">
+                            <circle cx="16" cy="8" r="6" opacity="0.8"/>
+                            <circle cx="8" cy="20" r="4" opacity="0.6"/>
+                            <circle cx="24" cy="20" r="4" opacity="0.6"/>
+                            <path d="M12 18c2-2 6-2 8 0" stroke="currentColor" stroke-width="2" fill="none"/>
+                        </svg>
+                        <span class="text-xl font-bold text-primary">UniCircle</span>
+                    </a>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="homepage.html" class="text-primary font-medium">Home</a>
+                    <a href="ride_finder.html" class="text-text-secondary hover:text-primary transition-colors">Find Rides</a>
+                    <a href="profile_management.html" class="text-text-secondary hover:text-primary transition-colors">Profile</a>
+                    <div class="flex items-center space-x-3">
+                        <button id="joinNowHeader" class="btn-primary">Join Now</button>
+                    </div>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button class="text-text-secondary hover:text-primary p-2">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative bg-gradient-to-br from-primary-50 to-secondary-50 overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-r from-primary/10 to-secondary/10"></div>
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Hero Content -->
+                <div class="text-center lg:text-left">
+                    <h1 class="text-4xl lg:text-6xl font-bold text-text-primary mb-6">
+                        Your campus community, 
+                        <span class="text-gradient-primary">connected</span>
+                    </h1>
+                    <p class="text-xl text-text-secondary mb-8 max-w-2xl">
+                        Smart rides, real friendships. Join thousands of USC students sharing rides, splitting costs, and building community one journey at a time.
+                    </p>
+                    
+                    <!-- CTA Buttons -->
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8">
+                        <a href="ride_finder.html" class="btn-primary text-lg px-8 py-4 inline-flex items-center justify-center">
+                            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                            </svg>
+                            Find a Ride
+                        </a>
+                        <a href="ride_finder.html" class="btn-secondary text-lg px-8 py-4 inline-flex items-center justify-center">
+                            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
+                            </svg>
+                            Offer a Ride
+                        </a>
+                    </div>
+
+                    <!-- Trust Indicators -->
+                    <div class="flex flex-wrap items-center justify-center lg:justify-start gap-6 text-sm text-text-muted">
+                        <div class="flex items-center">
+                            <svg class="w-4 h-4 text-success mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            University Verified
+                        </div>
+                        <div class="flex items-center">
+                            <svg class="w-4 h-4 text-success mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            Safe & Secure
+                        </div>
+                        <div class="flex items-center">
+                            <svg class="w-4 h-4 text-success mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                            15,000+ Students
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hero Image -->
+                <div class="relative">
+                    <div class="aspect-w-4 aspect-h-3 rounded-2xl overflow-hidden shadow-campus-md">
+                        <img 
+                            src="https://images.unsplash.com/photo-1689686610856-3bcf921eb1f0" 
+                            alt="USC campus with iconic Tommy Trojan statue and red brick university buildings"
+                            class="w-full h-96 object-cover"
+                            onerror="this.src='https://images.unsplash.com/photo-1562774053-701939374585?w=800&h=600&fit=crop&crop=entropy&auto=format&q=60'; this.onerror=null;"
+                        >
+                    </div>
+                    <!-- Floating Stats -->
+                    <div class="absolute -bottom-6 -left-6 bg-surface rounded-lg shadow-campus p-4 border border-border">
+                        <div class="text-2xl font-bold text-primary">$2,400</div>
+                        <div class="text-sm text-text-secondary">Avg. saved per year</div>
+                    </div>
+                    <div class="absolute -top-6 -right-6 bg-surface rounded-lg shadow-campus p-4 border border-border">
+                        <div class="text-2xl font-bold text-secondary">98%</div>
+                        <div class="text-sm text-text-secondary">Safety rating</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Campus Quick Access -->
+    <section class="py-16 bg-surface">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-text-primary mb-4">Find Your USC Community</h2>
+                <p class="text-lg text-text-secondary max-w-2xl mx-auto">
+                    Connect with fellow Trojans and discover rides tailored to USC campus routes
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- USC Main Campus -->
+                <div class="card hover:shadow-campus-md transition-all duration-300 cursor-pointer group">
+                    <div class="flex items-center mb-4">
+                        <img 
+                            src="https://images.unsplash.com/photo-1727717112563-e1a748992c91" 
+                            alt="USC Bovard Auditorium with classic red brick architecture"
+                            class="w-12 h-12 rounded-lg object-cover"
+                            onerror="this.src='https://images.unsplash.com/photo-1562774053-701939374585?w=200&h=200&fit=crop&crop=entropy&auto=format&q=60'; this.onerror=null;"
+                        >
+                        <div class="ml-3">
+                            <h3 class="font-semibold text-text-primary group-hover:text-primary transition-colors">USC Main Campus</h3>
+                            <p class="text-sm text-text-secondary">2,847 active riders</p>
+                        </div>
+                    </div>
+                    <div class="text-sm text-text-muted">
+                        <div class="flex justify-between mb-1">
+                            <span>Available rides</span>
+                            <span class="text-success font-medium">24</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Avg. cost saved</span>
+                            <span class="text-accent font-medium">$18/ride</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- USC Health Sciences -->
+                <div class="card hover:shadow-campus-md transition-all duration-300 cursor-pointer group">
+                    <div class="flex items-center mb-4">
+                        <img 
+                            src="https://images.unsplash.com/photo-1521399053810-a478062d283e" 
+                            alt="USC Health Sciences Campus modern medical building"
+                            class="w-12 h-12 rounded-lg object-cover"
+                            onerror="this.src='https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=200&h=200&fit=crop&crop=entropy&auto=format&q=60'; this.onerror=null;"
+                        >
+                        <div class="ml-3">
+                            <h3 class="font-semibold text-text-primary group-hover:text-primary transition-colors">USC Health Sciences</h3>
+                            <p class="text-sm text-text-secondary">1,923 active riders</p>
+                        </div>
+                    </div>
+                    <div class="text-sm text-text-muted">
+                        <div class="flex justify-between mb-1">
+                            <span>Available rides</span>
+                            <span class="text-success font-medium">18</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Avg. cost saved</span>
+                            <span class="text-accent font-medium">$22/ride</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- USC Village -->
+                <div class="card hover:shadow-campus-md transition-all duration-300 cursor-pointer group">
+                    <div class="flex items-center mb-4">
+                        <img 
+                            src="https://images.unsplash.com/photo-1699021563914-0ad4d300e8c8" 
+                            alt="USC Village residential complex with modern student housing"
+                            class="w-12 h-12 rounded-lg object-cover"
+                            onerror="this.src='https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=200&h=200&fit=crop&crop=entropy&auto=format&q=60'; this.onerror=null;"
+                        >
+                        <div class="ml-3">
+                            <h3 class="font-semibold text-text-primary group-hover:text-primary transition-colors">USC Village</h3>
+                            <p class="text-sm text-text-secondary">1,654 active riders</p>
+                        </div>
+                    </div>
+                    <div class="text-sm text-text-muted">
+                        <div class="flex justify-between mb-1">
+                            <span>Available rides</span>
+                            <span class="text-success font-medium">15</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Avg. cost saved</span>
+                            <span class="text-accent font-medium">$16/ride</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- USC Sports Complex -->
+                <div class="card hover:shadow-campus-md transition-all duration-300 cursor-pointer group">
+                    <div class="flex items-center mb-4">
+                        <img 
+                            src="https://images.unsplash.com/photo-1635157807214-8a3ecc08cac1" 
+                            alt="USC Coliseum and athletic facilities"
+                            class="w-12 h-12 rounded-lg object-cover"
+                            onerror="this.src='https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=200&h=200&fit=crop&crop=entropy&auto=format&q=60'; this.onerror=null;"
+                        >
+                        <div class="ml-3">
+                            <h3 class="font-semibold text-text-primary group-hover:text-primary transition-colors">USC Sports Complex</h3>
+                            <p class="text-sm text-text-secondary">987 active riders</p>
+                        </div>
+                    </div>
+                    <div class="text-sm text-text-muted">
+                        <div class="flex justify-between mb-1">
+                            <span>Available rides</span>
+                            <span class="text-success font-medium">12</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Avg. cost saved</span>
+                            <span class="text-accent font-medium">$14/ride</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Real-time Activity Feed -->
+    <section class="py-16 bg-gradient-to-r from-primary-50 to-secondary-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-text-primary mb-4">Live USC Connections</h2>
+                <p class="text-lg text-text-secondary">See real-time ride matches happening across USC campus</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Activity Card 1 -->
+                <div class="bg-surface rounded-lg p-6 shadow-campus border border-border">
+                    <div class="flex items-center mb-4">
+                        <img 
+                            src="https://images.unsplash.com/photo-1582886986484-a920df49f85c" 
+                            alt="Smiling USC female student with backpack"
+                            class="w-10 h-10 rounded-full object-cover"
+                            onerror="this.src='https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&h=100&fit=crop&crop=face&auto=format&q=60'; this.onerror=null;"
+                        >
+                        <div class="ml-3">
+                            <p class="font-medium text-text-primary">Sarah M.</p>
+                            <p class="text-sm text-text-secondary">USC → LAX</p>
+                        </div>
+                        <div class="ml-auto">
+                            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-success-100 text-success-600">
+                                Matched
+                            </span>
+                        </div>
+                    </div>
+                    <p class="text-sm text-text-muted">Just connected with 2 other Trojans • Saved $25 each</p>
+                    <div class="text-xs text-text-muted mt-2">2 minutes ago</div>
+                </div>
+
+                <!-- Activity Card 2 -->
+                <div class="bg-surface rounded-lg p-6 shadow-campus border border-border">
+                    <div class="flex items-center mb-4">
+                        <img 
+                            src="https://images.unsplash.com/photo-1624295963996-b374615ca499" 
+                            alt="Young USC male student smiling outdoors"
+                            class="w-10 h-10 rounded-full object-cover"
+                            onerror="this.src='https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face&auto=format&q=60'; this.onerror=null;"
+                        >
+                        <div class="ml-3">
+                            <p class="font-medium text-text-primary">Mike R.</p>
+                            <p class="text-sm text-text-secondary">USC → Santa Monica</p>
+                        </div>
+                        <div class="ml-auto">
+                            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-accent-100 text-accent-600">
+                                Available
+                            </span>
+                        </div>
+                    </div>
+                    <p class="text-sm text-text-muted">Offering ride for 3 passengers • $12 per person</p>
+                    <div class="text-xs text-text-muted mt-2">5 minutes ago</div>
+                </div>
+
+                <!-- Activity Card 3 -->
+                <div class="bg-surface rounded-lg p-6 shadow-campus border border-border">
+                    <div class="flex items-center mb-4">
+                        <img 
+                            src="https://images.unsplash.com/photo-1611796165012-c47a4c490d69" 
+                            alt="USC female student with curly hair smiling"
+                            class="w-10 h-10 rounded-full object-cover"
+                            onerror="this.src='https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&h=100&fit=crop&crop=face&auto=format&q=60'; this.onerror=null;"
+                        >
+                        <div class="ml-3">
+                            <p class="font-medium text-text-primary">Emma L.</p>
+                            <p class="text-sm text-text-secondary">USC → Downtown LA</p>
+                        </div>
+                        <div class="ml-auto">
+                            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-600">
+                                Searching
+                            </span>
+                        </div>
+                    </div>
+                    <p class="text-sm text-text-muted">Looking for ride share • Flexible on timing</p>
+                    <div class="text-xs text-text-muted mt-2">8 minutes ago</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Student Testimonials -->
+    <section class="py-16 bg-surface">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-text-primary mb-4">Stories from Our USC Community</h2>
+                <p class="text-lg text-text-secondary">Real Trojans, real friendships, real savings</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="card">
+                    <div class="flex items-center mb-4">
+                        <img 
+                            src="https://images.unsplash.com/photo-1592085552145-5e508372c3f4" 
+                            alt="Asian USC female student smiling in casual attire"
+                            class="w-12 h-12 rounded-full object-cover"
+                            onerror="this.src='https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&h=100&fit=crop&crop=face&auto=format&q=60'; this.onerror=null;"
+                        >
+                        <div class="ml-3">
+                            <p class="font-semibold text-text-primary">Jessica Chen</p>
+                            <p class="text-sm text-text-secondary">USC, Junior</p>
+                        </div>
+                    </div>
+                    <p class="text-text-secondary mb-4">
+                        "I've saved over $1,200 this semester and made three close friends through UniCircle. It's completely changed how I think about getting around USC campus."
+                    </p>
+                    <div class="flex items-center">
+                        <div class="flex text-accent">
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        </div>
+                        <span class="ml-2 text-sm text-text-muted">5.0</span>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="card">
+                    <div class="flex items-center mb-4">
+                        <img 
+                            src="https://images.unsplash.com/photo-1731341869626-965d159567d7" 
+                            alt="USC male student with friendly smile wearing casual shirt"
+                            class="w-12 h-12 rounded-full object-cover"
+                            onerror="this.src='https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face&auto=format&q=60'; this.onerror=null;"
+                        >
+                        <div class="ml-3">
+                            <p class="font-semibold text-text-primary">Marcus Johnson</p>
+                            <p class="text-sm text-text-secondary">USC, Senior</p>
+                        </div>
+                    </div>
+                    <p class="text-text-secondary mb-4">
+                        "As an international student, UniCircle helped me connect with local USC students and learn about LA. It's been invaluable for both transportation and community."
+                    </p>
+                    <div class="flex items-center">
+                        <div class="flex text-accent">
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        </div>
+                        <span class="ml-2 text-sm text-text-muted">5.0</span>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="card">
+                    <div class="flex items-center mb-4">
+                        <img 
+                            src="https://images.unsplash.com/photo-1583892709436-4379c0927e16" 
+                            alt="USC female student with blonde hair smiling warmly"
+                            class="w-12 h-12 rounded-full object-cover"
+                            onerror="this.src='https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&h=100&fit=crop&crop=face&auto=format&q=60'; this.onerror=null;"
+                        >
+                        <div class="ml-3">
+                            <p class="font-semibold text-text-primary">Taylor Rodriguez</p>
+                            <p class="text-sm text-text-secondary">USC, Sophomore</p>
+                        </div>
+                    </div>
+                    <p class="text-text-secondary mb-4">
+                        "The safety features and university verification give me peace of mind. My parents love that I'm riding with verified USC students from my own campus."
+                    </p>
+                    <div class="flex items-center">
+                        <div class="flex text-accent">
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        </div>
+                        <span class="ml-2 text-sm text-text-muted">5.0</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community Impact -->
+    <section class="py-16 bg-gradient-to-br from-primary-600 to-secondary-600 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4">Together We Go Further</h2>
+                <p class="text-xl opacity-90 max-w-2xl mx-auto">
+                    Every ride shared makes our USC community stronger and our planet healthier
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="text-4xl font-bold mb-2">15,847</div>
+                    <div class="text-lg opacity-90">Active Trojans</div>
+                    <div class="text-sm opacity-75 mt-1">Across USC campuses</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl font-bold mb-2">$2.1M</div>
+                    <div class="text-lg opacity-90">Total Saved</div>
+                    <div class="text-sm opacity-75 mt-1">This academic year</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl font-bold mb-2">89,432</div>
+                    <div class="text-lg opacity-90">Successful Rides</div>
+                    <div class="text-sm opacity-75 mt-1">98% satisfaction rate</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl font-bold mb-2">127 tons</div>
+                    <div class="text-lg opacity-90">CO₂ Reduced</div>
+                    <div class="text-sm opacity-75 mt-1">Environmental impact</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-surface">
+        <div class="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-text-primary mb-6">
+                Ready to Join Your USC Community?
+            </h2>
+            <p class="text-xl text-text-secondary mb-8 max-w-2xl mx-auto">
+                Start saving money, making friends, and reducing your carbon footprint with every ride
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button id="joinNowCTA" class="btn-primary text-lg px-8 py-4 inline-flex items-center justify-center">
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z"/>
+                    </svg>
+                    Get Started Free
+                </button>
+                <a href="ride_finder.html" class="btn-secondary text-lg px-8 py-4 inline-flex items-center justify-center">
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                    </svg>
+                    Browse Rides
+                </a>
+            </div>
+            <p class="text-sm text-text-muted mt-6">
+                No credit card required • University email verification • Join 15,000+ Trojans
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-text-primary text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <!-- Brand -->
+                <div class="md:col-span-1">
+                    <div class="flex items-center space-x-2 mb-4">
+                        <svg class="w-8 h-8 text-primary" viewBox="0 0 32 32" fill="currentColor">
+                            <circle cx="16" cy="8" r="6" opacity="0.8"/>
+                            <circle cx="8" cy="20" r="4" opacity="0.6"/>
+                            <circle cx="24" cy="20" r="4" opacity="0.6"/>
+                            <path d="M12 18c2-2 6-2 8 0" stroke="currentColor" stroke-width="2" fill="none"/>
+                        </svg>
+                        <span class="text-xl font-bold">UniCircle</span>
+                    </div>
+                    <p class="text-gray-400 text-sm">
+                        Connecting USC students through safe, affordable, and community-driven ridesharing.
+                    </p>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="font-semibold mb-4">Platform</h3>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="ride_finder.html" class="hover:text-white transition-colors">Find Rides</a></li>
+                        <li><a href="ride_finder.html" class="hover:text-white transition-colors">Offer Rides</a></li>
+                        <li><a href="profile_management.html" class="hover:text-white transition-colors">My Profile</a></li>
+                        <li><a href="javascript:void(0)" class="hover:text-white transition-colors">Safety Center</a></li>
+                    </ul>
+                </div>
+
+                <!-- Support -->
+                <div>
+                    <h3 class="font-semibold mb-4">Support</h3>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="javascript:void(0)" class="hover:text-white transition-colors">Help Center</a></li>
+                        <li><a href="javascript:void(0)" class="hover:text-white transition-colors">Community Guidelines</a></li>
+                        <li><a href="javascript:void(0)" class="hover:text-white transition-colors">Contact Us</a></li>
+                        <li><a href="javascript:void(0)" class="hover:text-white transition-colors">Report Issue</a></li>
+                    </ul>
+                </div>
+
+                <!-- Legal -->
+                <div>
+                    <h3 class="font-semibold mb-4">Legal</h3>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="javascript:void(0)" class="hover:text-white transition-colors">Privacy Policy</a></li>
+                        <li><a href="javascript:void(0)" class="hover:text-white transition-colors">Terms of Service</a></li>
+                        <li><a href="javascript:void(0)" class="hover:text-white transition-colors">Cookie Policy</a></li>
+                        <li><a href="javascript:void(0)" class="hover:text-white transition-colors">Accessibility</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-700 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-sm text-gray-400">
+                    © 2025 UniCircle. All Rights Reserved.
+                </p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="javascript:void(0)" class="text-gray-400 hover:text-white transition-colors">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
+                        </svg>
+                    </a>
+                    <a href="javascript:void(0)" class="text-gray-400 hover:text-white transition-colors">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z"/>
+                        </svg>
+                    </a>
+                    <a href="javascript:void(0)" class="text-gray-400 hover:text-white transition-colors">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.174-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.347-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.402.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.357-.629-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24.009 12.017 24.009c6.624 0 11.99-5.367 11.99-11.988C24.007 5.367 18.641.001.012.001z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Email Verification Modal -->
+    <div id="emailVerificationModal" class="fixed inset-0 z-50 overflow-y-auto hidden">
+        <div class="flex min-h-screen items-center justify-center p-4 text-center sm:block sm:p-0">
+            <!-- Background overlay -->
+            <div class="fixed inset-0 bg-black bg-opacity-50 transition-opacity" id="emailModalOverlay"></div>
+            
+            <!-- Modal panel -->
+            <div class="inline-block transform overflow-hidden rounded-lg bg-white text-left align-bottom shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg sm:align-middle">
+                <div class="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
+                    <div class="sm:flex sm:items-start">
+                        <div class="mx-auto flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-success-100 sm:mx-0 sm:h-10 sm:w-10">
+                            <svg class="h-6 w-6 text-success" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                            </svg>
+                        </div>
+                        <div class="mt-3 text-center sm:ml-4 sm:mt-0 sm:text-left w-full">
+                            <h3 class="text-lg font-medium leading-6 text-gray-900 mb-2">
+                                Check Your Email!
+                            </h3>
+                            <div class="mt-2">
+                                <p class="text-sm text-gray-500 mb-4">
+                                    We've sent a verification email to <strong id="userEmailDisplay"></strong>. Please check your inbox and click the verification link to activate your account.
+                                </p>
+                                
+                                <div class="mt-4 p-3 bg-primary-50 rounded-md">
+                                    <div class="flex">
+                                        <svg class="h-5 w-5 text-primary mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                        </svg>
+                                        <div class="text-sm text-primary">
+                                            <p>Don't see the email? Check your spam folder or click "Resend Email" below.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="mt-4 space-y-2">
+                                    <button id="resendEmailBtn" class="w-full btn-secondary text-sm py-2">
+                                        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
+                                        </svg>
+                                        Resend Verification Email
+                                    </button>
+                                    <div id="resendStatus" class="text-xs text-center text-text-muted hidden"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-gray-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
+                    <button 
+                        type="button" 
+                        id="checkVerificationBtn"
+                        class="inline-flex w-full justify-center rounded-md bg-primary px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-primary-600 sm:ml-3 sm:w-auto transition-colors duration-200"
+                    >
+                        I've Verified My Email
+                    </button>
+                    <button 
+                        type="button" 
+                        id="closeEmailModal"
+                        class="mt-3 inline-flex w-full justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:mt-0 sm:w-auto transition-colors duration-200"
+                    >
+                        Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<script>
+// Enhanced Homepage Button Functionality with Working Email Verification
+document.addEventListener('DOMContentLoaded', function() {
+    // Join Now Modal HTML
+    const modalHTML = `
+        <div id="joinNowModal" class="fixed inset-0 z-50 overflow-y-auto hidden">
+            <div class="flex min-h-screen items-center justify-center p-4 text-center sm:block sm:p-0">
+                <!-- Background overlay -->
+                <div class="fixed inset-0 bg-black bg-opacity-50 transition-opacity" id="modalOverlay"></div>
+                
+                <!-- Modal panel -->
+                <div class="inline-block transform overflow-hidden rounded-lg bg-white text-left align-bottom shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg sm:align-middle">
+                    <div class="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
+                        <div class="sm:flex sm:items-start">
+                            <div class="mx-auto flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-primary-100 sm:mx-0 sm:h-10 sm:w-10">
+                                <svg class="h-6 w-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z"/>
+                                </svg>
+                            </div>
+                            <div class="mt-3 text-center sm:ml-4 sm:mt-0 sm:text-left w-full">
+                                <h3 class="text-lg font-medium leading-6 text-gray-900 mb-2">
+                                    Join the USC Community!
+                                </h3>
+                                <div class="mt-2">
+                                    <p class="text-sm text-gray-500 mb-4">
+                                        Ready to start saving money and making friends through ridesharing? Let's get you connected with fellow Trojans!
+                                    </p>
+                                    
+                                    <!-- Quick signup form -->
+                                    <form id="quickSignupForm" class="space-y-4">
+                                        <div>
+                                            <label for="email" class="block text-sm font-medium text-gray-700">USC Email</label>
+                                            <input 
+                                                type="email" 
+                                                id="email" 
+                                                name="email" 
+                                                placeholder="your.name@usc.edu"
+                                                class="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 text-sm focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
+                                                required
+                                            >
+                                        </div>
+                                        <div>
+                                            <label for="fullName" class="block text-sm font-medium text-gray-700">Full Name</label>
+                                            <input 
+                                                type="text" 
+                                                id="fullName" 
+                                                name="fullName" 
+                                                placeholder="Enter your full name"
+                                                class="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 text-sm focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
+                                                required
+                                            >
+                                        </div>
+                                        <div>
+                                            <label for="year" class="block text-sm font-medium text-gray-700">Academic Year</label>
+                                            <select 
+                                                id="year" 
+                                                name="year" 
+                                                class="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 text-sm focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
+                                                required
+                                            >
+                                                <option value="">Select your year</option>
+                                                <option value="freshman">Freshman</option>
+                                                <option value="sophomore">Sophomore</option>
+                                                <option value="junior">Junior</option>
+                                                <option value="senior">Senior</option>
+                                                <option value="graduate">Graduate Student</option>
+                                            </select>
+                                        </div>
+                                    </form>
+                                    
+                                    <div class="mt-4 p-3 bg-primary-50 rounded-md">
+                                        <div class="flex">
+                                            <svg class="h-5 w-5 text-primary mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                            </svg>
+                                            <p class="text-sm text-primary">
+                                                Your USC email will be verified for security and community trust.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-gray-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
+                        <button 
+                            type="button" 
+                            id="submitJoin"
+                            class="inline-flex w-full justify-center rounded-md bg-primary px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-primary-600 sm:ml-3 sm:w-auto transition-colors duration-200"
+                        >
+                            Join UniCircle
+                        </button>
+                        <button 
+                            type="button" 
+                            id="cancelJoin"
+                            class="mt-3 inline-flex w-full justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:mt-0 sm:w-auto transition-colors duration-200"
+                        >
+                            Cancel
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    `;
+    
+    // Add modal to body
+    document.body.insertAdjacentHTML('beforeend', modalHTML);
+    
+    // Join Now button functionality - Header
+    const joinNowHeader = document.getElementById('joinNowHeader');
+    if (joinNowHeader) {
+        joinNowHeader.addEventListener('click', function(e) {
+            e.preventDefault();
+            showJoinNowModal();
+        });
+    }
+    
+    // Join Now button functionality - CTA
+    const joinNowCTA = document.getElementById('joinNowCTA');
+    if (joinNowCTA) {
+        joinNowCTA.addEventListener('click', function(e) {
+            e.preventDefault();
+            showJoinNowModal();
+        });
+    }
+    
+    // Modal functionality
+    function showJoinNowModal() {
+        const modal = document.getElementById('joinNowModal');
+        modal.classList.remove('hidden');
+        document.body.classList.add('overflow-hidden');
+        
+        // Focus on email input
+        setTimeout(() => {
+            document.getElementById('email').focus();
+        }, 100);
+    }
+    
+    function hideJoinNowModal() {
+        const modal = document.getElementById('joinNowModal');
+        modal.classList.add('hidden');
+        document.body.classList.remove('overflow-hidden');
+        
+        // Reset form
+        document.getElementById('quickSignupForm').reset();
+    }
+    
+    // Modal event listeners
+    document.getElementById('modalOverlay').addEventListener('click', hideJoinNowModal);
+    document.getElementById('cancelJoin').addEventListener('click', hideJoinNowModal);
+    
+    // Submit join form with working email verification
+    document.getElementById('submitJoin').addEventListener('click', function() {
+        const form = document.getElementById('quickSignupForm');
+        const email = document.getElementById('email').value;
+        const fullName = document.getElementById('fullName').value;
+        const year = document.getElementById('year').value;
+        
+        // Basic validation
+        if (!email || !fullName || !year) {
+            showHomepageNotification('Please fill in all fields', 'error');
+            return;
+        }
+        
+        // USC email validation
+        if (!email.endsWith('@usc.edu')) {
+            showHomepageNotification('Please use your USC email address (@usc.edu)', 'error');
+            return;
+        }
+        
+        // Show loading state
+        this.innerHTML = `
+            <div class="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2 inline-block"></div>
+            Sending verification email...
+        `;
+        this.disabled = true;
+        
+        // Simulate account creation and email sending
+        setTimeout(() => {
+            // Store user data temporarily
+            sessionStorage.setItem('pendingUser', JSON.stringify({
+                email: email,
+                fullName: fullName,
+                year: year
+            }));
+            
+            hideJoinNowModal();
+            showEmailVerificationModal(email);
+            
+            // Show notification about email being sent
+            showHomepageNotification('Verification email sent! Please check your inbox.', 'success');
+        }, 2000);
+    });
+    
+    // Email verification modal functionality
+    function showEmailVerificationModal(email) {
+        const modal = document.getElementById('emailVerificationModal');
+        const userEmailDisplay = document.getElementById('userEmailDisplay');
+        
+        userEmailDisplay.textContent = email;
+        modal.classList.remove('hidden');
+        document.body.classList.add('overflow-hidden');
+    }
+    
+    function hideEmailVerificationModal() {
+        const modal = document.getElementById('emailVerificationModal');
+        modal.classList.add('hidden');
+        document.body.classList.remove('overflow-hidden');
+    }
+    
+    // Email verification modal event listeners
+    document.getElementById('emailModalOverlay').addEventListener('click', hideEmailVerificationModal);
+    document.getElementById('closeEmailModal').addEventListener('click', hideEmailVerificationModal);
+    
+    // Resend email functionality
+    document.getElementById('resendEmailBtn').addEventListener('click', function() {
+        const btn = this;
+        const status = document.getElementById('resendStatus');
+        
+        btn.disabled = true;
+        btn.innerHTML = `
+            <div class="animate-spin rounded-full h-4 w-4 border-b-2 border-primary mr-2 inline-block"></div>
+            Sending...
+        `;
+        
+        // Simulate resending email
+        setTimeout(() => {
+            btn.disabled = false;
+            btn.innerHTML = `
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
+                </svg>
+                Resend Verification Email
+            `;
+            
+            status.textContent = 'Verification email resent successfully!';
+            status.classList.remove('hidden');
+            status.classList.add('text-success');
+            
+            setTimeout(() => {
+                status.classList.add('hidden');
+            }, 3000);
+        }, 1500);
+    });
+    
+    // Check verification and redirect to profile
+    document.getElementById('checkVerificationBtn').addEventListener('click', function() {
+        const btn = this;
+        
+        btn.innerHTML = `
+            <div class="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2 inline-block"></div>
+            Checking verification...
+        `;
+        btn.disabled = true;
+        
+        // Simulate verification check
+        setTimeout(() => {
+            const pendingUser = JSON.parse(sessionStorage.getItem('pendingUser') || '{}');
+            
+            // In a real app, this would check the backend for verification status
+            // For demo purposes, we'll assume verification is successful
+            
+            hideEmailVerificationModal();
+            showHomepageNotification(`Welcome to UniCircle, ${pendingUser.fullName?.split(' ')[0] || 'there'}! Your account has been verified successfully.`, 'success');
+            
+            // Redirect to profile management page where they can book and post rides
+            setTimeout(() => {
+                window.location.href = 'profile_management.html';
+            }, 2000);
+            
+            // Clear pending user data
+            sessionStorage.removeItem('pendingUser');
+        }, 1500);
+    });
+    
+    // Escape key to close modal
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            const joinModal = document.getElementById('joinNowModal');
+            const emailModal = document.getElementById('emailVerificationModal');
+            
+            if (!joinModal.classList.contains('hidden')) {
+                hideJoinNowModal();
+            } else if (!emailModal.classList.contains('hidden')) {
+                hideEmailVerificationModal();
+            }
+        }
+    });
+
+    // Find a Ride button functionality
+    const findRideButtons = document.querySelectorAll('a[href="ride_finder.html"]');
+    findRideButtons.forEach(button => {
+        if (button.textContent.includes('Find a Ride') || button.textContent.includes('Browse Rides')) {
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                // Add loading state
+                const originalText = this.innerHTML;
+                this.innerHTML = `
+                    <div class="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-2"></div>
+                    Searching...
+                `;
+                
+                // Navigate after short delay
+                setTimeout(() => {
+                    window.location.href = 'ride_finder.html';
+                }, 800);
+            });
+        }
+    });
+
+    // Offer a Ride button functionality
+    const offerRideButtons = document.querySelectorAll('a[href="ride_finder.html"].btn-secondary');
+    offerRideButtons.forEach(button => {
+        if (button.textContent.includes('Offer a Ride')) {
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                // Add loading state
+                const originalText = this.innerHTML;
+                this.innerHTML = `
+                    <div class="animate-spin rounded-full h-5 w-5 border-b-2 border-primary mr-2"></div>
+                    Preparing...
+                `;
+                
+                // Navigate to ride finder in offer mode
+                setTimeout(() => {
+                    window.location.href = 'ride_finder.html?offer=true';
+                }, 800);
+            });
+        }
+    });
+
+    // Campus cards functionality
+    const campusCards = document.querySelectorAll('.card.hover\\:shadow-campus-md');
+    campusCards.forEach(card => {
+        card.addEventListener('click', function() {
+            const campusName = this.querySelector('h3').textContent;
+            
+            // Add click effect
+            this.style.transform = 'scale(0.98)';
+            setTimeout(() => {
+                this.style.transform = 'scale(1)';
+            }, 150);
+            
+            // Show notification and redirect
+            showHomepageNotification(`Searching rides for ${campusName}...`, 'info');
+            
+            setTimeout(() => {
+                window.location.href = `ride_finder.html?campus=${encodeURIComponent(campusName)}`;
+            }, 1000);
+        });
+    });
+
+    // Live activity cards interaction
+    const activityCards = document.querySelectorAll('.bg-surface.rounded-lg.p-6.shadow-campus');
+    activityCards.forEach(card => {
+        card.addEventListener('click', function() {
+            const userName = this.querySelector('.font-medium.text-text-primary').textContent;
+            const route = this.querySelector('.text-sm.text-text-secondary').textContent;
+            
+            // Add click animation
+            this.style.transform = 'scale(0.98)';
+            setTimeout(() => {
+                this.style.transform = 'scale(1)';
+            }, 150);
+            
+            showHomepageNotification(`Connecting you with similar rides like ${userName}'s ${route} trip...`, 'info');
+            
+            setTimeout(() => {
+                window.location.href = 'ride_finder.html?similar=true';
+            }, 1500);
+        });
+    });
+
+    // Add hover effects to interactive elements
+    addHoverEffects();
+});
+
+function addHoverEffects() {
+    // Campus cards hover effect
+    const campusCards = document.querySelectorAll('.card.hover\\:shadow-campus-md');
+    campusCards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-2px)';
+            this.style.transition = 'transform 0.2s ease';
+        });
+        
+        card.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0)';
+        });
+    });
+
+    // Activity cards hover effect
+    const activityCards = document.querySelectorAll('.bg-surface.rounded-lg.p-6.shadow-campus');
+    activityCards.forEach(card => {
+        card.style.cursor = 'pointer';
+        
+        card.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-1px)';
+            this.style.boxShadow = '0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)';
+            this.style.transition = 'all 0.2s ease';
+        });
+        
+        card.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0)';
+            this.style.boxShadow = '';
+        });
+    });
+}
+
+function showHomepageNotification(message, type = 'info') {
+    const notification = document.createElement('div');
+    notification.className = `fixed top-4 right-4 z-50 p-4 rounded-lg shadow-campus-md max-w-sm transform transition-all duration-300 translate-x-full`;
+    
+    const bgColor = type === 'success' ? 'bg-success' : type === 'error' ? 'bg-error' : 'bg-primary';
+    notification.classList.add(bgColor, 'text-white');
+    
+    const icon = type === 'success' ? 'M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z' : 
+                 type === 'error' ? 'M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L12.732 4.5c-.77-.833-2.694-.833-3.464 0L3.34 16.5c-.77.833.192 2.5 1.732 2.5z' :
+                 'M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z';
+    
+    notification.innerHTML = `
+        <div class="flex items-center">
+            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="${icon}"/>
+            </svg>
+            <span>${message}</span>
+        </div>
+    `;
+    
+    document.body.appendChild(notification);
+    
+    // Animate in
+    setTimeout(() => {
+        notification.classList.remove('translate-x-full');
+    }, 100);
+    
+    // Auto remove after 4 seconds
+    setTimeout(() => {
+        notification.classList.add('translate-x-full');
+        setTimeout(() => {
+            if (document.body.contains(notification)) {
+                document.body.removeChild(notification);
+            }
+        }, 300);
+    }, 4000);
+}
+
+// Add some dynamic statistics animation
+function animateStatistics() {
+    const stats = document.querySelectorAll('.text-4xl.font-bold');
+    
+    stats.forEach(stat => {
+        const finalValue = stat.textContent;
+        const isNumber = !isNaN(parseInt(finalValue.replace(/[^\d]/g, '')));
+        
+        if (isNumber) {
+            const numValue = parseInt(finalValue.replace(/[^\d]/g, ''));
+            const prefix = finalValue.match(/^[^\d]*/)[0];
+            const suffix = finalValue.match(/[^\d]*$/)[0];
+            
+            // Animate the number
+            let current = 0;
+            const increment = numValue / 50;
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= numValue) {
+                    stat.textContent = finalValue;
+                    clearInterval(timer);
+                } else {
+                    stat.textContent = prefix + Math.floor(current).toLocaleString() + suffix;
+                }
+            }, 50);
+        }
+    });
+}
+
+// Animate statistics when they come into view
+const observerOptions = {
+    threshold: 0.5,
+    rootMargin: '0px 0px -100px 0px'
+};
+
+const statsObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            animateStatistics();
+            statsObserver.unobserve(entry.target);
+        }
+    });
+}, observerOptions);
+
+// Observe the statistics section
+document.addEventListener('DOMContentLoaded', function() {
+    const statsSection = document.querySelector('.bg-gradient-to-br.from-primary-600');
+    if (statsSection) {
+        statsObserver.observe(statsSection);
+    }
+});
+</script>
+<script id="dhws-dataInjector" src="../public/dhws-data-injector.js"></script>
+</body>
+</html>
