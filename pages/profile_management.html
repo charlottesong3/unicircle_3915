@@ -44,8 +44,9 @@
                             </button>
                         </div>
                         <img 
-                            src="https://images.unsplash.com/photo-1725473825040-74703a06a2c5" 
-                            alt="Sarah Martinez profile picture - smiling female college student"
+                            id="navProfilePic"
+                            src="https://images.unsplash.com/photo-1652376924447-ab929125ee31" 
+                            alt="Profile picture"
                             class="w-8 h-8 rounded-full object-cover"
                             onerror="this.src='https://images.pixabay.com/photo/2016/11/21/12/42/beard-1845166_1280.jpg'; this.onerror=null;"
                         >
@@ -72,10 +73,12 @@
                 <div class="flex items-center gap-4">
                     <div class="relative">
                         <img 
-                            src="https://images.unsplash.com/photo-1682683067324-6921a0a86a14" 
-                            alt="Sarah Martinez profile picture - smiling female college student with backpack"
-                            class="w-20 h-20 rounded-full object-cover border-4 border-surface shadow-campus"
+                            id="profilePicture"
+                            src="https://images.unsplash.com/photo-1652376924447-ab929125ee31" 
+                            alt="Profile picture"
+                            class="w-20 h-20 rounded-full object-cover border-4 border-surface shadow-campus cursor-pointer hover:opacity-90 transition-opacity"
                             onerror="this.src='https://images.pixabay.com/photo/2016/11/21/12/42/beard-1845166_1280.jpg'; this.onerror=null;"
+                            onclick="profileManager.showProfilePictureModal()"
                         >
                         <div class="absolute -bottom-1 -right-1 w-6 h-6 bg-success rounded-full border-2 border-surface flex items-center justify-center">
                             <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
@@ -84,8 +87,8 @@
                         </div>
                     </div>
                     <div>
-                        <h1 class="text-2xl font-bold text-text-primary">Sarah Martinez</h1>
-                        <p class="text-text-secondary">USC • Junior • Psychology Major</p>
+                        <h1 id="profileName" class="text-2xl font-bold text-text-primary">Loading...</h1>
+                        <p id="profileInfo" class="text-text-secondary">USC Student</p>
                         <div class="flex items-center mt-1">
                             <div class="flex text-accent">
                                 <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
@@ -94,25 +97,19 @@
                                 <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
                                 <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
                             </div>
-                            <span class="ml-2 text-sm text-text-muted">4.9 • 127 rides</span>
+                            <span class="ml-2 text-sm text-text-muted" id="profileRating">New Member</span>
                         </div>
                     </div>
                 </div>
 
                 <!-- Achievement Badges & Quick Actions -->
                 <div class="flex flex-col md:flex-row md:ml-auto gap-4">
-                    <div class="flex flex-wrap gap-2">
+                    <div class="flex flex-wrap gap-2" id="achievementBadges">
                         <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-success-100 text-success-600">
                             <svg class="w-3 h-3 mr-1" fill="currentColor" viewBox="0 0 20 20">
                                 <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
                             </svg>
                             Verified Student
-                        </span>
-                        <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-accent-100 text-accent-600">
-                            <svg class="w-3 h-3 mr-1" fill="currentColor" viewBox="0 0 20 20">
-                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
-                            </svg>
-                            Top Rider
                         </span>
                     </div>
                     <button id="addFriendBtn" class="btn-primary text-sm px-4 py-2 whitespace-nowrap">
@@ -184,19 +181,19 @@
                         <!-- Quick Stats -->
                         <div class="grid md:grid-cols-3 gap-6">
                             <div class="card text-center">
-                                <div class="text-3xl font-bold text-primary mb-2">$1,247</div>
+                                <div id="totalSaved" class="text-3xl font-bold text-primary mb-2">$0</div>
                                 <div class="text-sm text-text-secondary">Total Saved</div>
-                                <div class="text-xs text-success mt-1">↑ $89 this month</div>
+                                <div class="text-xs text-text-muted mt-1" id="monthlySaved">Get started with your first ride!</div>
                             </div>
                             <div class="card text-center">
-                                <div class="text-3xl font-bold text-secondary mb-2">127</div>
+                                <div id="ridesCompleted" class="text-3xl font-bold text-secondary mb-2">0</div>
                                 <div class="text-sm text-text-secondary">Rides Completed</div>
-                                <div class="text-xs text-success mt-1">↑ 8 this month</div>
+                                <div class="text-xs text-text-muted mt-1" id="monthlyRides">Ready to book your first ride?</div>
                             </div>
                             <div class="card text-center">
-                                <div class="text-3xl font-bold text-accent mb-2">342 lbs</div>
+                                <div id="co2Reduced" class="text-3xl font-bold text-accent mb-2">0 lbs</div>
                                 <div class="text-sm text-text-secondary">CO₂ Reduced</div>
-                                <div class="text-xs text-success mt-1">↑ 23 lbs this month</div>
+                                <div class="text-xs text-text-muted mt-1" id="monthlyCo2">Help save the environment!</div>
                             </div>
                         </div>
 
@@ -225,6 +222,50 @@
                             </button>
                         </div>
 
+                        <!-- New User Welcome Message -->
+                        <div id="welcomeMessage" class="card bg-gradient-to-r from-primary-50 to-secondary-50 border-primary-200">
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0">
+                                    <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"/>
+                                    </svg>
+                                </div>
+                                <div class="ml-4 flex-1">
+                                    <h3 class="text-lg font-semibold text-primary mb-2">Welcome to UniCircle!</h3>
+                                    <p class="text-text-secondary mb-4">You're all set up and ready to start connecting with fellow USC students. Here's how to get started:</p>
+                                    <div class="space-y-2 text-sm text-text-secondary">
+                                        <div class="flex items-center">
+                                            <svg class="w-4 h-4 text-success mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                            </svg>
+                                            Book your first ride or offer one to fellow students
+                                        </div>
+                                        <div class="flex items-center">
+                                            <svg class="w-4 h-4 text-success mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                            </svg>
+                                            Add regular routes to get matched automatically
+                                        </div>
+                                        <div class="flex items-center">
+                                            <svg class="w-4 h-4 text-success mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                            </svg>
+                                            Connect with friends and join ride groups
+                                        </div>
+                                    </div>
+                                    <div class="mt-4 flex flex-wrap gap-2">
+                                        <button onclick="window.location.href='ride_finder.html'" class="btn-primary text-sm px-4 py-2">Find Your First Ride</button>
+                                        <button onclick="profileManager.switchTab('preferences')" class="btn-secondary text-sm px-4 py-2">Set Preferences</button>
+                                    </div>
+                                </div>
+                                <button onclick="profileManager.dismissWelcomeMessage()" class="text-text-muted hover:text-text-secondary transition-colors">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+
                         <!-- Recent Activity -->
                         <div class="card">
                             <div class="flex items-center justify-between mb-6">
@@ -232,47 +273,12 @@
                                 <button id="viewAllActivity" class="text-sm text-primary hover:text-primary-700 transition-colors">View All</button>
                             </div>
                             
-                            <div class="space-y-4">
-                                <!-- Activity Item 1 -->
-                                <div class="flex items-center p-4 bg-success-50 rounded-lg border border-success-100">
-                                    <div class="w-10 h-10 bg-success rounded-full flex items-center justify-center">
-                                        <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                                        </svg>
-                                    </div>
-                                    <div class="ml-4 flex-1">
-                                        <p class="text-sm font-medium text-text-primary">Ride completed to Santa Monica</p>
-                                        <p class="text-xs text-text-secondary">With Mike R. and Emma L. • Saved $18</p>
-                                    </div>
-                                    <div class="text-xs text-text-muted">2 hours ago</div>
-                                </div>
-
-                                <!-- Activity Item 2 -->
-                                <div class="flex items-center p-4 bg-primary-50 rounded-lg border border-primary-100">
-                                    <div class="w-10 h-10 bg-primary rounded-full flex items-center justify-center">
-                                        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
-                                        </svg>
-                                    </div>
-                                    <div class="ml-4 flex-1">
-                                        <p class="text-sm font-medium text-text-primary">New ride request posted</p>
-                                        <p class="text-xs text-text-secondary">USC to LAX • Tomorrow 3:00 PM</p>
-                                    </div>
-                                    <div class="text-xs text-text-muted">1 day ago</div>
-                                </div>
-
-                                <!-- Activity Item 3 -->
-                                <div class="flex items-center p-4 bg-accent-50 rounded-lg border border-accent-100">
-                                    <div class="w-10 h-10 bg-accent rounded-full flex items-center justify-center">
-                                        <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
-                                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
-                                        </svg>
-                                    </div>
-                                    <div class="ml-4 flex-1">
-                                        <p class="text-sm font-medium text-text-primary">Received 5-star rating</p>
-                                        <p class="text-xs text-text-secondary">From Jessica C. • "Great conversation and punctual!"</p>
-                                    </div>
-                                    <div class="text-xs text-text-muted">2 days ago</div>
+                            <div id="activityContainer" class="space-y-4">
+                                <div class="text-center py-8 text-text-muted">
+                                    <svg class="w-12 h-12 mx-auto mb-4 text-text-muted" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                    </svg>
+                                    <p>No activity yet. Start by booking or offering your first ride!</p>
                                 </div>
                             </div>
                         </div>
@@ -290,44 +296,12 @@
                             </div>
 
                             <div class="grid md:grid-cols-2 gap-4" id="savedRoutesContainer">
-                                <!-- Route 1 -->
-                                <div class="p-4 border border-border rounded-lg hover:shadow-campus-md transition-all duration-300 cursor-pointer" onclick="showRouteDetails('USC ↔ Santa Monica')">
-                                    <div class="flex items-center justify-between mb-3">
-                                        <h3 class="font-medium text-text-primary">USC ↔ Santa Monica</h3>
-                                        <span class="text-xs text-success bg-success-100 px-2 py-1 rounded-full">Active</span>
-                                    </div>
-                                    <div class="text-sm text-text-secondary mb-2">
-                                        <div class="flex items-center">
-                                            <svg class="w-4 h-4 mr-2 text-text-muted" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                                            </svg>
-                                            Usually Mon, Wed, Fri • 2:00 PM
-                                        </div>
-                                    </div>
-                                    <div class="flex items-center justify-between text-xs text-text-muted">
-                                        <span>23 rides completed</span>
-                                        <span>$312 saved</span>
-                                    </div>
-                                </div>
-
-                                <!-- Route 2 -->
-                                <div class="p-4 border border-border rounded-lg hover:shadow-campus-md transition-all duration-300 cursor-pointer" onclick="showRouteDetails('USC ↔ LAX Airport')">
-                                    <div class="flex items-center justify-between mb-3">
-                                        <h3 class="font-medium text-text-primary">USC ↔ LAX Airport</h3>
-                                        <span class="text-xs text-text-muted bg-gray-100 px-2 py-1 rounded-full">Occasional</span>
-                                    </div>
-                                    <div class="text-sm text-text-secondary mb-2">
-                                        <div class="flex items-center">
-                                            <svg class="w-4 h-4 mr-2 text-text-muted" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                                            </svg>
-                                            As needed • Usually weekends
-                                        </div>
-                                    </div>
-                                    <div class="flex items-center justify-between text-xs text-text-muted">
-                                        <span>8 rides completed</span>
-                                        <span>$184 saved</span>
-                                    </div>
+                                <div class="text-center py-8 text-text-muted col-span-full">
+                                    <svg class="w-12 h-12 mx-auto mb-4 text-text-muted" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                                    </svg>
+                                    <p class="mb-2">No saved routes yet</p>
+                                    <p class="text-sm">Add your regular routes to get automatic ride matches</p>
                                 </div>
                             </div>
                         </div>
@@ -354,101 +328,13 @@
                                 </div>
                             </div>
 
-                            <div class="space-y-4">
-                                <!-- Ride History Item 1 -->
-                                <div class="border border-border rounded-lg p-4 hover:shadow-campus transition-all duration-300">
-                                    <div class="flex items-center justify-between mb-3">
-                                        <div class="flex items-center">
-                                            <div class="w-10 h-10 bg-success-100 rounded-full flex items-center justify-center mr-3">
-                                                <svg class="w-5 h-5 text-success" fill="currentColor" viewBox="0 0 20 20">
-                                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                                                </svg>
-                                            </div>
-                                            <div>
-                                                <h4 class="font-medium text-text-primary">USC Campus → Santa Monica</h4>
-                                                <p class="text-sm text-text-secondary">October 22, 2025 • 2:15 PM</p>
-                                            </div>
-                                        </div>
-                                        <div class="text-right">
-                                            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-success-100 text-success-600">Completed</span>
-                                            <p class="text-sm font-medium text-text-primary mt-1">$18 saved</p>
-                                        </div>
-                                    </div>
-                                    <div class="grid md:grid-cols-3 gap-4 text-sm text-text-secondary">
-                                        <div>
-                                            <span class="font-medium">Driver:</span> Mike Rodriguez
-                                        </div>
-                                        <div>
-                                            <span class="font-medium">Passengers:</span> 3 total
-                                        </div>
-                                        <div>
-                                            <span class="font-medium">Rating Given:</span> ⭐⭐⭐⭐⭐
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Ride History Item 2 -->
-                                <div class="border border-border rounded-lg p-4 hover:shadow-campus transition-all duration-300">
-                                    <div class="flex items-center justify-between mb-3">
-                                        <div class="flex items-center">
-                                            <div class="w-10 h-10 bg-primary-100 rounded-full flex items-center justify-center mr-3">
-                                                <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
-                                                </svg>
-                                            </div>
-                                            <div>
-                                                <h4 class="font-medium text-text-primary">USC Campus → LAX Airport</h4>
-                                                <p class="text-sm text-text-secondary">October 20, 2025 • 11:30 AM</p>
-                                            </div>
-                                        </div>
-                                        <div class="text-right">
-                                            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-600">Driver</span>
-                                            <p class="text-sm font-medium text-text-primary mt-1">$45 earned</p>
-                                        </div>
-                                    </div>
-                                    <div class="grid md:grid-cols-3 gap-4 text-sm text-text-secondary">
-                                        <div>
-                                            <span class="font-medium">Passengers:</span> Emma L., Alex C.
-                                        </div>
-                                        <div>
-                                            <span class="font-medium">Total fare:</span> $45
-                                        </div>
-                                        <div>
-                                            <span class="font-medium">Average rating:</span> ⭐⭐⭐⭐⭐
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- More History Items -->
-                                <div class="border border-border rounded-lg p-4 hover:shadow-campus transition-all duration-300">
-                                    <div class="flex items-center justify-between mb-3">
-                                        <div class="flex items-center">
-                                            <div class="w-10 h-10 bg-warning-100 rounded-full flex items-center justify-center mr-3">
-                                                <svg class="w-5 h-5 text-warning" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                                                </svg>
-                                            </div>
-                                            <div>
-                                                <h4 class="font-medium text-text-primary">USC Campus → Beverly Hills</h4>
-                                                <p class="text-sm text-text-secondary">October 18, 2025 • 6:00 PM</p>
-                                            </div>
-                                        </div>
-                                        <div class="text-right">
-                                            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-warning-100 text-warning-600">Canceled</span>
-                                            <p class="text-sm text-text-secondary mt-1">Weather issue</p>
-                                        </div>
-                                    </div>
-                                    <div class="grid md:grid-cols-3 gap-4 text-sm text-text-secondary">
-                                        <div>
-                                            <span class="font-medium">Reason:</span> Heavy rain
-                                        </div>
-                                        <div>
-                                            <span class="font-medium">Refund:</span> Full refund
-                                        </div>
-                                        <div>
-                                            <span class="font-medium">Rescheduled:</span> Yes
-                                        </div>
-                                    </div>
+                            <div id="rideHistoryContainer" class="space-y-4">
+                                <div class="text-center py-8 text-text-muted">
+                                    <svg class="w-12 h-12 mx-auto mb-4 text-text-muted" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                    </svg>
+                                    <p class="mb-2">No ride history yet</p>
+                                    <p class="text-sm">Your completed rides will appear here</p>
                                 </div>
                             </div>
                         </div>
@@ -468,105 +354,13 @@
                                 </button>
                             </div>
 
-                            <div class="grid md:grid-cols-2 gap-4">
-                                <!-- Friend 1 -->
-                                <div class="flex items-center p-3 border border-border rounded-lg hover:shadow-campus transition-all duration-300">
-                                    <img 
-                                        src="https://images.unsplash.com/photo-1531680253207-46986a7d3fef" 
-                                        alt="Mike Rodriguez profile picture"
-                                        class="w-12 h-12 rounded-full object-cover"
-                                        onerror="this.src='https://images.pixabay.com/photo/2016/11/21/12/42/beard-1845166_1280.jpg'; this.onerror=null;"
-                                    >
-                                    <div class="ml-3 flex-1">
-                                        <p class="font-medium text-text-primary">Mike Rodriguez</p>
-                                        <p class="text-xs text-text-secondary">USC • 12 shared rides</p>
-                                        <div class="flex items-center mt-1">
-                                            <div class="flex text-accent text-xs">
-                                                <span>⭐⭐⭐⭐⭐</span>
-                                            </div>
-                                            <span class="ml-1 text-xs text-text-muted">4.9</span>
-                                        </div>
-                                    </div>
-                                    <button onclick="startChat('Mike Rodriguez')" class="text-primary hover:text-primary-700 transition-colors">
-                                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
-                                        </svg>
-                                    </button>
-                                </div>
-
-                                <!-- Friend 2 -->
-                                <div class="flex items-center p-3 border border-border rounded-lg hover:shadow-campus transition-all duration-300">
-                                    <img 
-                                        src="https://images.unsplash.com/photo-1702346249859-34db7962e153" 
-                                        alt="Emma Liu profile picture"
-                                        class="w-12 h-12 rounded-full object-cover"
-                                        onerror="this.src='https://images.pixabay.com/photo/2016/11/21/12/42/beard-1845166_1280.jpg'; this.onerror=null;"
-                                    >
-                                    <div class="ml-3 flex-1">
-                                        <p class="font-medium text-text-primary">Emma Liu</p>
-                                        <p class="text-xs text-text-secondary">USC • 8 shared rides</p>
-                                        <div class="flex items-center mt-1">
-                                            <div class="flex text-accent text-xs">
-                                                <span>⭐⭐⭐⭐⭐</span>
-                                            </div>
-                                            <span class="ml-1 text-xs text-text-muted">4.8</span>
-                                        </div>
-                                    </div>
-                                    <button onclick="startChat('Emma Liu')" class="text-primary hover:text-primary-700 transition-colors">
-                                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
-                                        </svg>
-                                    </button>
-                                </div>
-
-                                <!-- Friend 3 -->
-                                <div class="flex items-center p-3 border border-border rounded-lg hover:shadow-campus transition-all duration-300">
-                                    <img 
-                                        src="https://images.unsplash.com/photo-1710604885283-b598ca251936" 
-                                        alt="Alex Chen profile picture"
-                                        class="w-12 h-12 rounded-full object-cover"
-                                        onerror="this.src='https://images.pixabay.com/photo/2016/11/21/12/42/beard-1845166_1280.jpg'; this.onerror=null;"
-                                    >
-                                    <div class="ml-3 flex-1">
-                                        <p class="font-medium text-text-primary">Alex Chen</p>
-                                        <p class="text-xs text-text-secondary">USC • 15 shared rides</p>
-                                        <div class="flex items-center mt-1">
-                                            <div class="flex text-accent text-xs">
-                                                <span>⭐⭐⭐⭐⭐</span>
-                                            </div>
-                                            <span class="ml-1 text-xs text-text-muted">5.0</span>
-                                        </div>
-                                    </div>
-                                    <button onclick="startChat('Alex Chen')" class="text-primary hover:text-primary-700 transition-colors">
-                                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
-                                        </svg>
-                                    </button>
-                                </div>
-
-                                <!-- Friend 4 -->
-                                <div class="flex items-center p-3 border border-border rounded-lg hover:shadow-campus transition-all duration-300">
-                                    <img 
-                                        src="https://images.unsplash.com/photo-1516641638068-8b1e97b2a534" 
-                                        alt="Jessica Park profile picture"
-                                        class="w-12 h-12 rounded-full object-cover"
-                                        onerror="this.src='https://images.pixabay.com/photo/2016/11/21/12/42/beard-1845166_1280.jpg'; this.onerror=null;"
-                                    >
-                                    <div class="ml-3 flex-1">
-                                        <p class="font-medium text-text-primary">Jessica Park</p>
-                                        <p class="text-xs text-text-secondary">USC • 6 shared rides</p>
-                                        <div class="flex items-center mt-1">
-                                            <div class="flex text-accent text-xs">
-                                                <span>⭐⭐⭐⭐⭐</span>
-                                            </div>
-                                            <span class="ml-1 text-xs text-text-muted">4.7</span>
-                                        </div>
-                                    </div>
-                                    <button onclick="startChat('Jessica Park')" class="text-primary hover:text-primary-700 transition-colors">
-                                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
-                                        </svg>
-                                    </button>
+                            <div id="friendsContainer" class="grid md:grid-cols-2 gap-4">
+                                <div class="text-center py-8 text-text-muted col-span-full">
+                                    <svg class="w-12 h-12 mx-auto mb-4 text-text-muted" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+                                    </svg>
+                                    <p class="mb-2">No friends added yet</p>
+                                    <p class="text-sm">Connect with fellow USC students to share rides</p>
                                 </div>
                             </div>
                         </div>
@@ -583,46 +377,13 @@
                                 </button>
                             </div>
 
-                            <div class="space-y-4">
-                                <!-- Group 1 -->
-                                <div class="border border-border rounded-lg p-4 hover:shadow-campus transition-all duration-300">
-                                    <div class="flex items-center justify-between mb-3">
-                                        <div>
-                                            <h4 class="font-medium text-text-primary">USC to LAX Commuters</h4>
-                                            <p class="text-sm text-text-secondary">15 members • Airport rides</p>
-                                        </div>
-                                        <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-600">Admin</span>
-                                    </div>
-                                    <div class="flex -space-x-2 mb-3">
-                                        <img class="w-8 h-8 rounded-full border-2 border-surface" src="https://images.unsplash.com/photo-1728700769206-68b6919cf706" alt="Group member">
-                                        <img class="w-8 h-8 rounded-full border-2 border-surface" src="https://images.unsplash.com/photo-1728700769206-68b6919cf706" alt="Group member">
-                                        <img class="w-8 h-8 rounded-full border-2 border-surface" src="https://images.unsplash.com/photo-1728700769206-68b6919cf706" alt="Group member">
-                                        <span class="w-8 h-8 rounded-full border-2 border-surface bg-primary-100 flex items-center justify-center text-xs text-primary font-medium">+12</span>
-                                    </div>
-                                    <div class="flex items-center justify-between text-sm text-text-muted">
-                                        <span>Next ride: Tomorrow 2:00 PM</span>
-                                        <button onclick="viewGroup('USC to LAX Commuters')" class="text-primary hover:text-primary-700 transition-colors">View Group</button>
-                                    </div>
-                                </div>
-
-                                <!-- Group 2 -->
-                                <div class="border border-border rounded-lg p-4 hover:shadow-campus transition-all duration-300">
-                                    <div class="flex items-center justify-between mb-3">
-                                        <div>
-                                            <h4 class="font-medium text-text-primary">Weekend Beach Trips</h4>
-                                            <p class="text-sm text-text-secondary">8 members • Santa Monica, Malibu</p>
-                                        </div>
-                                        <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-secondary-100 text-secondary-600">Member</span>
-                                    </div>
-                                    <div class="flex -space-x-2 mb-3">
-                                        <img class="w-8 h-8 rounded-full border-2 border-surface" src="https://images.unsplash.com/photo-1728700769206-68b6919cf706" alt="Group member">
-                                        <img class="w-8 h-8 rounded-full border-2 border-surface" src="https://images.unsplash.com/photo-1728700769206-68b6919cf706" alt="Group member">
-                                        <span class="w-8 h-8 rounded-full border-2 border-surface bg-secondary-100 flex items-center justify-center text-xs text-secondary font-medium">+6</span>
-                                    </div>
-                                    <div class="flex items-center justify-between text-sm text-text-muted">
-                                        <span>Next ride: Saturday 10:00 AM</span>
-                                        <button onclick="viewGroup('Weekend Beach Trips')" class="text-primary hover:text-primary-700 transition-colors">View Group</button>
-                                    </div>
+                            <div id="groupsContainer" class="space-y-4">
+                                <div class="text-center py-8 text-text-muted">
+                                    <svg class="w-12 h-12 mx-auto mb-4 text-text-muted" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+                                    </svg>
+                                    <p class="mb-2">No groups joined yet</p>
+                                    <p class="text-sm">Join or create groups to organize regular rides</p>
                                 </div>
                             </div>
                         </div>
@@ -634,6 +395,23 @@
                             <h2 class="text-xl font-semibold text-text-primary mb-6">Ride Preferences</h2>
                             
                             <form id="preferencesForm" class="space-y-6">
+                                <!-- Profile Information -->
+                                <div>
+                                    <h3 class="text-lg font-medium text-text-primary mb-4">Profile Information</h3>
+                                    <div class="grid md:grid-cols-2 gap-6">
+                                        <div>
+                                            <label class="block text-sm font-medium text-text-primary mb-2">Major (Optional)</label>
+                                            <input type="text" name="major" id="majorInput" placeholder="e.g., Psychology, Engineering..." 
+                                                   class="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500">
+                                        </div>
+                                        <div>
+                                            <label class="block text-sm font-medium text-text-primary mb-2">Phone Number (Optional)</label>
+                                            <input type="tel" name="phone" id="phoneInput" placeholder="(555) 123-4567" 
+                                                   class="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500">
+                                        </div>
+                                    </div>
+                                </div>
+
                                 <!-- Ride Preferences -->
                                 <div>
                                     <h3 class="text-lg font-medium text-text-primary mb-4">General Preferences</h3>
@@ -742,7 +520,7 @@
                                                 <span class="text-sm font-medium text-text-primary">Emergency Contacts</span>
                                                 <button class="text-primary hover:text-primary-700 transition-colors text-sm">Edit</button>
                                             </div>
-                                            <p class="text-xs text-text-secondary">2 contacts configured</p>
+                                            <p class="text-xs text-text-secondary">No contacts configured</p>
                                         </div>
                                         <div class="p-3 border border-border rounded-lg">
                                             <div class="flex items-center justify-between mb-2">
@@ -784,69 +562,38 @@
 
                     <!-- Chat Content -->
                     <div id="chatContent" class="space-y-8 hidden">
-                        <div class="grid lg:grid-cols-3 gap-6 h-[600px]">
-                            <!-- Chat List -->
-                            <div class="card overflow-hidden">
-                                <div class="p-4 border-b border-border">
-                                    <h3 class="font-semibold text-text-primary">Messages</h3>
-                                    <div class="mt-2">
-                                        <input type="text" placeholder="Search conversations..." class="w-full input-field text-sm py-2">
-                                    </div>
-                                </div>
-                                <div class="overflow-y-auto">
-                                    <!-- Chat Item 1 -->
-                                    <div class="p-3 border-b border-border hover:bg-primary-50 cursor-pointer" onclick="openChat('Mike Rodriguez', 'mike')">
-                                        <div class="flex items-center">
-                                            <img src="https://images.unsplash.com/photo-1636492345133-4dd15321749a" alt="Mike" class="w-10 h-10 rounded-full object-cover">
-                                            <div class="ml-3 flex-1">
-                                                <div class="flex items-center justify-between">
-                                                    <p class="font-medium text-text-primary">Mike Rodriguez</p>
-                                                    <span class="text-xs text-text-muted">2m ago</span>
-                                                </div>
-                                                <p class="text-sm text-text-secondary truncate">Thanks for the ride today!</p>
-                                            </div>
-                                            <div class="w-2 h-2 bg-primary rounded-full ml-2"></div>
+                        <div class="flex flex-col h-[600px] bg-surface rounded-lg shadow-campus border border-border overflow-hidden">
+                            <!-- Chat Layout -->
+                            <div class="flex flex-1 min-h-0">
+                                <!-- Chat List -->
+                                <div class="w-80 border-r border-border flex flex-col bg-background">
+                                    <div class="p-4 border-b border-border bg-surface">
+                                        <h3 class="font-semibold text-text-primary">Messages</h3>
+                                        <div class="mt-2">
+                                            <input type="text" placeholder="Search conversations..." class="w-full input-field text-sm py-2">
                                         </div>
                                     </div>
-
-                                    <!-- Chat Item 2 -->
-                                    <div class="p-3 border-b border-border hover:bg-primary-50 cursor-pointer" onclick="openChat('Emma Liu', 'emma')">
-                                        <div class="flex items-center">
-                                            <img src="https://images.unsplash.com/photo-1652717492729-67e5296ebd78" alt="Emma" class="w-10 h-10 rounded-full object-cover">
-                                            <div class="ml-3 flex-1">
-                                                <div class="flex items-center justify-between">
-                                                    <p class="font-medium text-text-primary">Emma Liu</p>
-                                                    <span class="text-xs text-text-muted">1h ago</span>
-                                                </div>
-                                                <p class="text-sm text-text-secondary truncate">Are you going to campus tomorrow?</p>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- Chat Item 3 -->
-                                    <div class="p-3 border-b border-border hover:bg-primary-50 cursor-pointer" onclick="openChat('Alex Chen', 'alex')">
-                                        <div class="flex items-center">
-                                            <img src="https://images.unsplash.com/photo-1555816969-b6adb9a6ae68" alt="Alex" class="w-10 h-10 rounded-full object-cover">
-                                            <div class="ml-3 flex-1">
-                                                <div class="flex items-center justify-between">
-                                                    <p class="font-medium text-text-primary">Alex Chen</p>
-                                                    <span class="text-xs text-text-muted">3h ago</span>
-                                                </div>
-                                                <p class="text-sm text-text-secondary truncate">Great meeting you! See you Friday</p>
-                                            </div>
+                                    <div class="flex-1 overflow-y-auto" id="chatList">
+                                        <div class="text-center py-8 text-text-muted">
+                                            <svg class="w-12 h-12 mx-auto mb-4 text-text-muted" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+                                            </svg>
+                                            <p class="mb-2">No conversations yet</p>
+                                            <p class="text-sm">Start chatting when you book or offer rides</p>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
 
-                            <!-- Chat Window -->
-                            <div class="lg:col-span-2 card overflow-hidden flex flex-col">
-                                <div id="chatWindow" class="flex-1 flex items-center justify-center text-text-muted">
-                                    <div class="text-center">
-                                        <svg class="w-12 h-12 mx-auto mb-4 text-text-muted" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
-                                        </svg>
-                                        <p>Select a conversation to start chatting</p>
+                                <!-- Chat Window -->
+                                <div class="flex-1 flex flex-col">
+                                    <div id="chatWindow" class="flex-1 flex items-center justify-center text-text-muted bg-gray-50">
+                                        <div class="text-center">
+                                            <svg class="w-16 h-16 mx-auto mb-4 text-text-muted" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+                                            </svg>
+                                            <p class="text-lg font-medium text-text-primary mb-2">Welcome to UniCircle Chat</p>
+                                            <p class="text-text-secondary">Select a conversation to start messaging with fellow students</p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -937,79 +684,278 @@
     </footer>
 
 <script>
-// Enhanced Profile Management System
+// Enhanced Profile Management System with Complete Profile Creation Flow
 class ProfileManager {
     constructor() {
         this.currentTab = 'dashboard';
         this.modalManager = new ModalManager();
+        this.userProfile = null;
+        this.isNewUser = false;
         this.init();
     }
 
     init() {
         this.bindNavigationEvents();
         this.bindButtonEvents();
-        this.bindChatEvents();
         this.loadUserProfile();
+        this.checkNewUserStatus();
+    }
+
+    checkNewUserStatus() {
+        // Check if this is a new user from the homepage signup flow
+        const pendingUser = sessionStorage.getItem('pendingUser');
+        const existingUser = localStorage.getItem('currentUser');
+        
+        if (pendingUser && !existingUser) {
+            this.isNewUser = true;
+            this.createNewUserProfile(JSON.parse(pendingUser));
+            sessionStorage.removeItem('pendingUser');
+        } else if (!existingUser) {
+            // No existing user data, create default profile
+            this.isNewUser = true;
+            this.createDefaultProfile();
+        }
+    }
+
+    createNewUserProfile(userData) {
+        const profile = {
+            id: this.generateUserId(),
+            fullName: userData.fullName,
+            email: userData.email,
+            year: userData.year,
+            major: '',
+            phone: '',
+            university: 'USC',
+            verified: true,
+            joinDate: new Date().toISOString(),
+            profilePicture: this.getRandomProfilePicture(),
+            stats: {
+                totalSaved: 0,
+                ridesCompleted: 0,
+                co2Reduced: 0,
+                rating: 0,
+                ratingCount: 0
+            },
+            preferences: {
+                music: true,
+                conversation: true,
+                pets: false,
+                nonsmoking: true,
+                femaleDrivers: false,
+                instantBooking: true,
+                rideReminders: true,
+                newMatches: true,
+                messageNotifications: true,
+                promotions: false
+            },
+            privacy: {
+                showFullName: false,
+                showAcademicInfo: true,
+                showRideHistory: true,
+                blockUnknown: false,
+                locationSharing: true
+            },
+            savedRoutes: [],
+            friends: [],
+            groups: [],
+            activityHistory: []
+        };
+
+        this.userProfile = profile;
+        localStorage.setItem('currentUser', JSON.stringify(profile));
+        this.updateProfileDisplay();
+        this.showWelcomeMessage();
+        
+        // Show success notification
+        setTimeout(() => {
+            this.showNotification(`Welcome to UniCircle, ${profile.fullName.split(' ')[0]}! Your profile has been created successfully.`, 'success');
+        }, 500);
+    }
+
+    createDefaultProfile() {
+        const profile = {
+            id: this.generateUserId(),
+            fullName: 'USC Student',
+            email: 'student@usc.edu',
+            year: 'student',
+            major: '',
+            phone: '',
+            university: 'USC',
+            verified: true,
+            joinDate: new Date().toISOString(),
+            profilePicture: this.getRandomProfilePicture(),
+            stats: {
+                totalSaved: 0,
+                ridesCompleted: 0,
+                co2Reduced: 0,
+                rating: 0,
+                ratingCount: 0
+            },
+            preferences: {
+                music: true,
+                conversation: true,
+                pets: false,
+                nonsmoking: true,
+                femaleDrivers: false,
+                instantBooking: true,
+                rideReminders: true,
+                newMatches: true,
+                messageNotifications: true,
+                promotions: false
+            },
+            privacy: {
+                showFullName: false,
+                showAcademicInfo: true,
+                showRideHistory: true,
+                blockUnknown: false,
+                locationSharing: true
+            },
+            savedRoutes: [],
+            friends: [],
+            groups: [],
+            activityHistory: []
+        };
+
+        this.userProfile = profile;
+        localStorage.setItem('currentUser', JSON.stringify(profile));
+        this.updateProfileDisplay();
+        this.showWelcomeMessage();
+    }
+
+    getRandomProfilePicture() {
+        const profilePics = [
+            'https://images.unsplash.com/photo-1682683067324-6921a0a86a14',
+            'https://images.unsplash.com/photo-1725473825040-74703a06a2c5',
+            'https://images.unsplash.com/photo-1531680253207-46986a7d3fef',
+            'https://images.unsplash.com/photo-1702346249859-34db7962e153',
+            'https://images.unsplash.com/photo-1710604885283-b598ca251936',
+            'https://images.unsplash.com/photo-1516641638068-8b1e97b2a534'
+        ];
+        return profilePics[Math.floor(Math.random() * profilePics.length)];
     }
 
     loadUserProfile() {
-        // Load user profile from session or localStorage
-        const userData = this.getUserData();
+        const userData = JSON.parse(localStorage.getItem('currentUser'));
         if (userData) {
-            this.updateProfileDisplay(userData);
+            this.userProfile = userData;
+            this.updateProfileDisplay();
+            this.loadUserStats();
+            this.loadUserPreferences();
         }
     }
 
-    getUserData() {
-        // Check if user came from successful signup
-        const pendingUser = sessionStorage.getItem('pendingUser');
-        if (pendingUser) {
-            const user = JSON.parse(pendingUser);
-            // Move to localStorage for persistence
-            localStorage.setItem('currentUser', JSON.stringify({
-                ...user,
-                id: this.generateUserId(),
-                joinDate: new Date().toISOString(),
-                verified: true
-            }));
-            sessionStorage.removeItem('pendingUser');
-            return JSON.parse(localStorage.getItem('currentUser'));
+    updateProfileDisplay() {
+        if (!this.userProfile) return;
+
+        // Update profile name and info
+        document.getElementById('profileName').textContent = this.userProfile.fullName;
+        
+        const yearText = this.userProfile.year.charAt(0).toUpperCase() + this.userProfile.year.slice(1);
+        const majorText = this.userProfile.major ? ` • ${this.userProfile.major}` : '';
+        document.getElementById('profileInfo').textContent = `${this.userProfile.university} • ${yearText}${majorText}`;
+        
+        // Update profile pictures
+        document.getElementById('profilePicture').src = this.userProfile.profilePicture;
+        document.getElementById('navProfilePic').src = this.userProfile.profilePicture;
+        
+        // Update rating display
+        const ratingEl = document.getElementById('profileRating');
+        if (this.userProfile.stats.ratingCount > 0) {
+            const rating = (this.userProfile.stats.rating / this.userProfile.stats.ratingCount).toFixed(1);
+            ratingEl.textContent = `${rating} • ${this.userProfile.stats.ridesCompleted} rides`;
+        } else {
+            ratingEl.textContent = 'New Member';
+        }
+
+        // Update achievement badges
+        this.updateAchievementBadges();
+    }
+
+    updateAchievementBadges() {
+        const badgesContainer = document.getElementById('achievementBadges');
+        const badges = ['<span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-success-100 text-success-600"><svg class="w-3 h-3 mr-1" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Verified Student</span>'];
+        
+        // Add achievement badges based on user stats
+        if (this.userProfile.stats.ridesCompleted >= 10) {
+            badges.push('<span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-accent-100 text-accent-600"><svg class="w-3 h-3 mr-1" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>Active Rider</span>');
         }
         
-        // Return existing user data or default
-        return JSON.parse(localStorage.getItem('currentUser')) || {
-            fullName: 'Sarah Martinez',
-            email: 'sarah.martinez@usc.edu',
-            year: 'junior',
-            major: 'Psychology',
-            university: 'USC',
-            verified: true,
-            id: 'user_001',
-            joinDate: '2024-08-15T00:00:00.000Z'
-        };
+        if (this.userProfile.stats.totalSaved >= 500) {
+            badges.push('<span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-success-100 text-success-600"><svg class="w-3 h-3 mr-1" fill="currentColor" viewBox="0 0 20 20"><path d="M4 4a2 2 0 00-2 2v4a2 2 0 002 2V6h10a2 2 0 00-2-2H4zm2 6a2 2 0 012-2h8a2 2 0 012 2v4a2 2 0 01-2 2H8a2 2 0 01-2-2v-4zm6 4a2 2 0 100-4 2 2 0 000 4z"/></svg>Money Saver</span>');
+        }
+        
+        badgesContainer.innerHTML = badges.join('');
+    }
+
+    loadUserStats() {
+        if (!this.userProfile) return;
+
+        document.getElementById('totalSaved').textContent = `$${this.userProfile.stats.totalSaved.toLocaleString()}`;
+        document.getElementById('ridesCompleted').textContent = this.userProfile.stats.ridesCompleted.toString();
+        document.getElementById('co2Reduced').textContent = `${this.userProfile.stats.co2Reduced} lbs`;
+        
+        // Update monthly stats
+        if (this.userProfile.stats.ridesCompleted > 0) {
+            document.getElementById('monthlySaved').textContent = '↑ Great work this month!';
+            document.getElementById('monthlyRides').textContent = '↑ Keep it up!';
+            document.getElementById('monthlyCo2').textContent = '↑ Making a difference!';
+        }
+    }
+
+    loadUserPreferences() {
+        if (!this.userProfile || !this.userProfile.preferences) return;
+
+        // Load major and phone if available
+        if (this.userProfile.major) {
+            document.getElementById('majorInput').value = this.userProfile.major;
+        }
+        if (this.userProfile.phone) {
+            document.getElementById('phoneInput').value = this.userProfile.phone;
+        }
+
+        // Load checkbox preferences
+        Object.keys(this.userProfile.preferences).forEach(key => {
+            const checkbox = document.querySelector(`input[name="${key}"]`);
+            if (checkbox) {
+                checkbox.checked = this.userProfile.preferences[key];
+            }
+        });
+
+        // Load privacy settings
+        if (this.userProfile.privacy) {
+            Object.keys(this.userProfile.privacy).forEach(key => {
+                const checkbox = document.querySelector(`input[name="${key}"]`);
+                if (checkbox) {
+                    checkbox.checked = this.userProfile.privacy[key];
+                }
+            });
+        }
+    }
+
+    showWelcomeMessage() {
+        const welcomeMessage = document.getElementById('welcomeMessage');
+        if (welcomeMessage && this.isNewUser) {
+            welcomeMessage.style.display = 'block';
+        }
+    }
+
+    dismissWelcomeMessage() {
+        const welcomeMessage = document.getElementById('welcomeMessage');
+        welcomeMessage.style.display = 'none';
+        this.isNewUser = false;
+        
+        // Update user profile to indicate they've seen the welcome message
+        if (this.userProfile) {
+            this.userProfile.welcomeDismissed = true;
+            localStorage.setItem('currentUser', JSON.stringify(this.userProfile));
+        }
     }
 
     generateUserId() {
         return 'user_' + Math.random().toString(36).substr(2, 9);
     }
 
-    updateProfileDisplay(userData) {
-        // Update profile name and info
-        const profileName = document.querySelector('h1.text-2xl.font-bold');
-        const profileInfo = document.querySelector('p.text-text-secondary');
-        
-        if (profileName) {
-            profileName.textContent = userData.fullName;
-        }
-        
-        if (profileInfo) {
-            const yearText = userData.year.charAt(0).toUpperCase() + userData.year.slice(1);
-            profileInfo.textContent = `${userData.university} • ${yearText} • ${userData.major || 'Student'}`;
-        }
-    }
-
     bindNavigationEvents() {
-        // Navigation tab switching
         const navLinks = document.querySelectorAll('#profileNav a');
         navLinks.forEach(link => {
             link.addEventListener('click', (e) => {
@@ -1048,6 +994,27 @@ class ProfileManager {
         }
 
         this.currentTab = tabName;
+
+        // Load tab-specific content
+        if (tabName === 'chat') {
+            this.loadChatContent();
+        }
+    }
+
+    loadChatContent() {
+        // For new users, show empty state
+        const chatList = document.getElementById('chatList');
+        if (this.userProfile && this.userProfile.stats.ridesCompleted === 0) {
+            chatList.innerHTML = `
+                <div class="text-center py-8 text-text-muted px-4">
+                    <svg class="w-12 h-12 mx-auto mb-4 text-text-muted" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+                    </svg>
+                    <p class="mb-2 font-medium">No conversations yet</p>
+                    <p class="text-sm">Start chatting when you book or offer rides</p>
+                </div>
+            `;
+        }
     }
 
     bindButtonEvents() {
@@ -1083,8 +1050,68 @@ class ProfileManager {
         });
     }
 
-    bindChatEvents() {
-        // Chat functionality will be bound when chat tab is opened
+    showProfilePictureModal() {
+        const content = `
+            <div class="space-y-6">
+                <div class="bg-primary-50 rounded-lg p-4">
+                    <h3 class="font-semibold text-primary mb-2">Update Profile Picture</h3>
+                    <p class="text-sm text-text-secondary">Choose a new profile picture or upload your own</p>
+                </div>
+
+                <div class="grid grid-cols-3 gap-4">
+                    <div class="text-center">
+                        <img src="https://images.unsplash.com/photo-1682683067324-6921a0a86a14" 
+                             class="w-20 h-20 rounded-full object-cover mx-auto cursor-pointer hover:opacity-80 transition-opacity border-2 border-transparent hover:border-primary"
+                             onclick="profileManager.updateProfilePicture('https://images.unsplash.com/photo-1682683067324-6921a0a86a14')">
+                    </div>
+                    <div class="text-center">
+                        <img src="https://images.unsplash.com/photo-1725473825040-74703a06a2c5" 
+                             class="w-20 h-20 rounded-full object-cover mx-auto cursor-pointer hover:opacity-80 transition-opacity border-2 border-transparent hover:border-primary"
+                             onclick="profileManager.updateProfilePicture('https://images.unsplash.com/photo-1725473825040-74703a06a2c5')">
+                    </div>
+                    <div class="text-center">
+                        <img src="https://images.unsplash.com/photo-1531680253207-46986a7d3fef" 
+                             class="w-20 h-20 rounded-full object-cover mx-auto cursor-pointer hover:opacity-80 transition-opacity border-2 border-transparent hover:border-primary"
+                             onclick="profileManager.updateProfilePicture('https://images.unsplash.com/photo-1531680253207-46986a7d3fef')">
+                    </div>
+                    <div class="text-center">
+                        <img src="https://images.unsplash.com/photo-1702346249859-34db7962e153" 
+                             class="w-20 h-20 rounded-full object-cover mx-auto cursor-pointer hover:opacity-80 transition-opacity border-2 border-transparent hover:border-primary"
+                             onclick="profileManager.updateProfilePicture('https://images.unsplash.com/photo-1702346249859-34db7962e153')">
+                    </div>
+                    <div class="text-center">
+                        <img src="https://images.unsplash.com/photo-1710604885283-b598ca251936" 
+                             class="w-20 h-20 rounded-full object-cover mx-auto cursor-pointer hover:opacity-80 transition-opacity border-2 border-transparent hover:border-primary"
+                             onclick="profileManager.updateProfilePicture('https://images.unsplash.com/photo-1710604885283-b598ca251936')">
+                    </div>
+                    <div class="text-center">
+                        <img src="https://images.unsplash.com/photo-1516641638068-8b1e97b2a534" 
+                             class="w-20 h-20 rounded-full object-cover mx-auto cursor-pointer hover:opacity-80 transition-opacity border-2 border-transparent hover:border-primary"
+                             onclick="profileManager.updateProfilePicture('https://images.unsplash.com/photo-1516641638068-8b1e97b2a534')">
+                    </div>
+                </div>
+
+                <div class="flex justify-end pt-4 border-t border-border">
+                    <button onclick="profileManager.modalManager.closeModal()" class="btn-secondary">Close</button>
+                </div>
+            </div>
+        `;
+
+        this.modalManager.showModal(content, 'Update Profile Picture');
+    }
+
+    updateProfilePicture(imageUrl) {
+        if (this.userProfile) {
+            this.userProfile.profilePicture = imageUrl;
+            localStorage.setItem('currentUser', JSON.stringify(this.userProfile));
+            
+            // Update display
+            document.getElementById('profilePicture').src = imageUrl;
+            document.getElementById('navProfilePic').src = imageUrl;
+            
+            this.showNotification('Profile picture updated successfully!', 'success');
+            this.modalManager.closeModal();
+        }
     }
 
     showAddFriendModal() {
@@ -1150,12 +1177,8 @@ class ProfileManager {
             message: formData.get('message')
         };
 
-        // Simulate friend request
         this.showNotification(`Friend request sent successfully! They'll be notified via email.`, 'success');
         this.modalManager.closeModal();
-        
-        // Add to pending requests (simulate)
-        this.addToPendingRequests(friendData);
     }
 
     showAddRouteModal() {
@@ -1260,12 +1283,23 @@ class ProfileManager {
             .map(checkbox => checkbox.value);
         
         const routeData = {
+            id: this.generateUserId(),
             fromLocation: formData.get('fromLocation'),
             toLocation: formData.get('toLocation'),
             routeType: formData.get('routeType'),
             preferredTime: formData.get('preferredTime'),
-            days: selectedDays
+            days: selectedDays,
+            ridesCompleted: 0,
+            totalSaved: 0,
+            active: true,
+            createdAt: new Date().toISOString()
         };
+
+        // Add to user profile
+        if (this.userProfile) {
+            this.userProfile.savedRoutes.push(routeData);
+            localStorage.setItem('currentUser', JSON.stringify(this.userProfile));
+        }
 
         this.showNotification('Route saved successfully! You can now get matched with other students.', 'success');
         this.modalManager.closeModal();
@@ -1274,6 +1308,13 @@ class ProfileManager {
 
     addRouteToDisplay(routeData) {
         const container = document.getElementById('savedRoutesContainer');
+        
+        // Remove empty state if it exists
+        const emptyState = container.querySelector('.text-center.py-8');
+        if (emptyState) {
+            emptyState.remove();
+        }
+
         const daysText = routeData.days.length > 0 ? routeData.days.join(', ') : 'Flexible';
         
         const routeElement = document.createElement('div');
@@ -1293,8 +1334,8 @@ class ProfileManager {
                 </div>
             </div>
             <div class="flex items-center justify-between text-xs text-text-muted">
-                <span>0 rides completed</span>
-                <span>$0 saved</span>
+                <span>${routeData.ridesCompleted} rides completed</span>
+                <span>$${routeData.totalSaved} saved</span>
             </div>
         `;
         
@@ -1307,10 +1348,10 @@ class ProfileManager {
                 <div class="bg-primary-50 rounded-lg p-4">
                     <h3 class="font-semibold text-primary mb-2">${routeName}</h3>
                     <div class="grid md:grid-cols-2 gap-4 text-sm">
-                        <div><span class="text-text-secondary">Status:</span> <span class="ml-2 text-success font-medium">Active</span></div>
-                        <div><span class="text-text-secondary">Total Rides:</span> <span class="ml-2 font-medium">23 completed</span></div>
-                        <div><span class="text-text-secondary">Money Saved:</span> <span class="ml-2 font-medium text-success">$312</span></div>
-                        <div><span class="text-text-secondary">Regular Partners:</span> <span class="ml-2 font-medium">Mike R., Emma L.</span></div>
+                        <div><span class="text-text-secondary">Status:</span> <span class="ml-2 text-primary font-medium">Active</span></div>
+                        <div><span class="text-text-secondary">Total Rides:</span> <span class="ml-2 font-medium">0 completed</span></div>
+                        <div><span class="text-text-secondary">Money Saved:</span> <span class="ml-2 font-medium text-success">$0</span></div>
+                        <div><span class="text-text-secondary">Created:</span> <span class="ml-2 font-medium">Just now</span></div>
                     </div>
                 </div>
 
@@ -1391,25 +1432,98 @@ class ProfileManager {
         this.modalManager.showModal(content, 'Find Friends');
     }
 
+    showCreateGroupModal() {
+        const content = `
+            <form onsubmit="profileManager.handleCreateGroup(event)" class="space-y-6">
+                <div class="bg-secondary-50 rounded-lg p-4">
+                    <h3 class="font-semibold text-secondary mb-2">Create Ride Group</h3>
+                    <p class="text-sm text-text-secondary">Organize regular rides with fellow USC students</p>
+                </div>
+
+                <div class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-medium text-text-primary mb-2">Group Name</label>
+                        <input type="text" name="groupName" required placeholder="e.g., USC to LAX Commuters" 
+                               class="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500">
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-text-primary mb-2">Description</label>
+                        <textarea name="description" rows="3" placeholder="Describe the purpose and route of this group..."
+                                  class="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"></textarea>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-sm font-medium text-text-primary mb-2">Primary Route</label>
+                            <input type="text" name="primaryRoute" placeholder="USC → LAX Airport" 
+                                   class="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-text-primary mb-2">Group Type</label>
+                            <select name="groupType" class="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500">
+                                <option value="public">Public (Anyone can join)</option>
+                                <option value="private">Private (Invitation only)</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex space-x-4 pt-4">
+                    <button type="submit" class="btn-secondary flex-1">Create Group</button>
+                    <button type="button" onclick="profileManager.modalManager.closeModal()" class="btn-primary flex-1">Cancel</button>
+                </div>
+            </form>
+        `;
+
+        this.modalManager.showModal(content, 'Create New Group');
+    }
+
+    handleCreateGroup(event) {
+        event.preventDefault();
+        const formData = new FormData(event.target);
+        
+        const groupData = {
+            id: this.generateUserId(),
+            name: formData.get('groupName'),
+            description: formData.get('description'),
+            primaryRoute: formData.get('primaryRoute'),
+            type: formData.get('groupType'),
+            createdBy: this.userProfile?.id,
+            members: [this.userProfile?.id],
+            createdAt: new Date().toISOString()
+        };
+
+        // Add to user profile
+        if (this.userProfile) {
+            this.userProfile.groups.push(groupData);
+            localStorage.setItem('currentUser', JSON.stringify(this.userProfile));
+        }
+
+        this.showNotification('Group created successfully! Start inviting members to build your community.', 'success');
+        this.modalManager.closeModal();
+    }
+
     savePreferences() {
         const form = document.getElementById('preferencesForm');
         const formData = new FormData(form);
         
-        // Collect checkbox values
-        const preferences = {};
-        const checkboxes = form.querySelectorAll('input[type="checkbox"]');
-        checkboxes.forEach(checkbox => {
-            preferences[checkbox.name] = checkbox.checked;
-        });
+        // Update profile information
+        if (this.userProfile) {
+            this.userProfile.major = formData.get('major') || '';
+            this.userProfile.phone = formData.get('phone') || '';
+            
+            // Update preferences
+            const checkboxes = form.querySelectorAll('input[type="checkbox"]');
+            checkboxes.forEach(checkbox => {
+                this.userProfile.preferences[checkbox.name] = checkbox.checked;
+            });
+            
+            localStorage.setItem('currentUser', JSON.stringify(this.userProfile));
+            this.updateProfileDisplay();
+        }
 
-        // Save to localStorage (in real app, would save to backend)
-        localStorage.setItem('userPreferences', JSON.stringify(preferences));
         this.showNotification('Preferences saved successfully!', 'success');
-    }
-
-    addToPendingRequests(friendData) {
-        // This would normally send to backend
-        console.log('Friend request sent:', friendData);
     }
 
     showNotification(message, type = 'info') {
@@ -1437,7 +1551,9 @@ class ProfileManager {
         setTimeout(() => {
             notification.classList.add('translate-x-full');
             setTimeout(() => {
-                document.body.removeChild(notification);
+                if (document.body.contains(notification)) {
+                    document.body.removeChild(notification);
+                }
             }, 300);
         }, 5000);
     }
@@ -1514,7 +1630,7 @@ class ModalManager {
     }
 }
 
-// Chat functionality
+// Chat functionality - Fixed formatting
 function startChat(friendName) {
     profileManager.switchTab('chat');
     setTimeout(() => {
@@ -1524,9 +1640,10 @@ function startChat(friendName) {
 
 function openChat(name, id) {
     const chatWindow = document.getElementById('chatWindow');
+    chatWindow.className = 'flex-1 flex flex-col bg-white';
     chatWindow.innerHTML = `
         <!-- Chat Header -->
-        <div class="p-4 border-b border-border bg-primary-50">
+        <div class="flex items-center justify-between p-4 border-b border-border bg-primary-50">
             <div class="flex items-center">
                 <img src="https://images.unsplash.com/photo-1577544389000-4b3043f8981f" alt="${name}" class="w-10 h-10 rounded-full object-cover">
                 <div class="ml-3">
@@ -1534,30 +1651,47 @@ function openChat(name, id) {
                     <p class="text-sm text-success">Online</p>
                 </div>
             </div>
+            <button onclick="profileManager.loadChatContent()" class="text-text-muted hover:text-text-secondary">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                </svg>
+            </button>
         </div>
 
         <!-- Messages Area -->
-        <div class="flex-1 overflow-y-auto p-4 space-y-3" id="messagesArea">
-            <div class="text-left">
-                <div class="inline-block bg-gray-100 text-text-primary rounded-lg px-3 py-2 text-sm max-w-xs">
-                    Hey Sarah! Thanks for the great ride today. See you Friday for the airport trip?
+        <div class="flex-1 overflow-y-auto p-4 bg-gray-50" id="messagesArea">
+            <div class="space-y-4">
+                <div class="flex">
+                    <div class="flex-shrink-0 mr-3">
+                        <img src="https://images.unsplash.com/photo-1577544389000-4b3043f8981f" alt="${name}" class="w-8 h-8 rounded-full object-cover">
+                    </div>
+                    <div class="flex-1">
+                        <div class="bg-white rounded-lg px-4 py-2 shadow-sm border border-border max-w-md">
+                            <p class="text-sm text-text-primary">Hey! Thanks for the great ride today. See you Friday for the airport trip?</p>
+                        </div>
+                        <p class="text-xs text-text-muted mt-1 ml-1">2:45 PM</p>
+                    </div>
                 </div>
-                <p class="text-xs text-text-muted mt-1">2:45 PM</p>
-            </div>
-            <div class="text-right">
-                <div class="inline-block bg-primary text-white rounded-lg px-3 py-2 text-sm max-w-xs">
-                    Absolutely! Same pickup time works for me. 🚗
+                
+                <div class="flex justify-end">
+                    <div class="flex-1 max-w-md">
+                        <div class="bg-primary rounded-lg px-4 py-2 text-white ml-auto">
+                            <p class="text-sm">Absolutely! Same pickup time works for me. 🚗</p>
+                        </div>
+                        <p class="text-xs text-text-muted mt-1 text-right mr-1">2:47 PM</p>
+                    </div>
                 </div>
-                <p class="text-xs text-text-muted mt-1">2:47 PM</p>
             </div>
         </div>
 
         <!-- Message Input -->
-        <div class="p-4 border-t border-border bg-surface">
-            <form onsubmit="sendMessage(event, '${name}')" class="flex space-x-2">
-                <input type="text" name="message" placeholder="Type your message..." required
-                       class="flex-1 px-3 py-2 border border-border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500">
-                <button type="submit" class="btn-primary px-4 py-2">
+        <div class="p-4 border-t border-border bg-white">
+            <form onsubmit="sendMessage(event, '${name}')" class="flex items-end space-x-2">
+                <div class="flex-1">
+                    <input type="text" name="message" placeholder="Type your message..." required
+                           class="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 resize-none">
+                </div>
+                <button type="submit" class="btn-primary px-4 py-3 flex-shrink-0">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/>
                     </svg>
@@ -1569,35 +1703,47 @@ function openChat(name, id) {
 
 function sendMessage(event, recipientName) {
     event.preventDefault();
-    const message = event.target.message.value;
+    const message = event.target.message.value.trim();
+    if (!message) return;
+    
     const messagesArea = document.getElementById('messagesArea');
+    const messagesContainer = messagesArea.querySelector('.space-y-4');
     
-    // Add message to conversation
-    const messageElement = document.createElement('div');
-    messageElement.className = 'text-right';
-    messageElement.innerHTML = `
-        <div class="inline-block bg-primary text-white rounded-lg px-3 py-2 text-sm max-w-xs">
-            ${message}
+    // Add user message
+    const userMessageElement = document.createElement('div');
+    userMessageElement.className = 'flex justify-end';
+    userMessageElement.innerHTML = `
+        <div class="flex-1 max-w-md">
+            <div class="bg-primary rounded-lg px-4 py-2 text-white ml-auto">
+                <p class="text-sm">${message}</p>
+            </div>
+            <p class="text-xs text-text-muted mt-1 text-right mr-1">Just now</p>
         </div>
-        <p class="text-xs text-text-muted mt-1">Just now</p>
     `;
-    messagesArea.appendChild(messageElement);
+    messagesContainer.appendChild(userMessageElement);
     
-    // Clear input and scroll
+    // Clear input
     event.target.message.value = '';
+    
+    // Scroll to bottom
     messagesArea.scrollTop = messagesArea.scrollHeight;
     
-    // Simulate response
+    // Simulate response after delay
     setTimeout(() => {
         const responseElement = document.createElement('div');
-        responseElement.className = 'text-left';
+        responseElement.className = 'flex';
         responseElement.innerHTML = `
-            <div class="inline-block bg-gray-100 text-text-primary rounded-lg px-3 py-2 text-sm max-w-xs">
-                Thanks for the message! I'll get back to you soon.
+            <div class="flex-shrink-0 mr-3">
+                <img src="https://images.unsplash.com/photo-1577544389000-4b3043f8981f" alt="${recipientName}" class="w-8 h-8 rounded-full object-cover">
             </div>
-            <p class="text-xs text-text-muted mt-1">Just now</p>
+            <div class="flex-1">
+                <div class="bg-white rounded-lg px-4 py-2 shadow-sm border border-border max-w-md">
+                    <p class="text-sm text-text-primary">Thanks for the message! I'll get back to you soon.</p>
+                </div>
+                <p class="text-xs text-text-muted mt-1 ml-1">Just now</p>
+            </div>
         `;
-        messagesArea.appendChild(responseElement);
+        messagesContainer.appendChild(responseElement);
         messagesArea.scrollTop = messagesArea.scrollHeight;
     }, 2000);
 }
@@ -1611,36 +1757,18 @@ function viewGroup(groupName) {
         <div class="space-y-6">
             <div class="bg-primary-50 rounded-lg p-4">
                 <h3 class="font-semibold text-primary mb-2">${groupName}</h3>
-                <p class="text-sm text-text-secondary">15 active members sharing airport rides</p>
+                <p class="text-sm text-text-secondary">Group for organizing regular USC rides</p>
             </div>
 
             <div class="space-y-4">
-                <h4 class="font-semibold text-text-primary">Upcoming Group Rides</h4>
+                <h4 class="font-semibold text-text-primary">Group Activity</h4>
                 
-                <div class="border border-border rounded-lg p-4">
-                    <div class="flex items-center justify-between mb-3">
-                        <div>
-                            <h5 class="font-medium text-text-primary">USC → LAX Terminal 1</h5>
-                            <p class="text-sm text-text-secondary">Tomorrow, October 24 • 2:00 PM</p>
-                        </div>
-                        <button class="btn-primary text-sm px-4 py-2">Join Ride</button>
-                    </div>
-                    <div class="text-sm text-text-muted">
-                        <p>Driver: Mike R. • 3 seats available • $15 per person</p>
-                    </div>
-                </div>
-
-                <div class="border border-border rounded-lg p-4">
-                    <div class="flex items-center justify-between mb-3">
-                        <div>
-                            <h5 class="font-medium text-text-primary">LAX Terminal 2 → USC</h5>
-                            <p class="text-sm text-text-secondary">Friday, October 25 • 7:30 PM</p>
-                        </div>
-                        <button class="btn-secondary text-sm px-4 py-2">Offer to Drive</button>
-                    </div>
-                    <div class="text-sm text-text-muted">
-                        <p>Looking for driver • 4 passengers confirmed • $20 per person</p>
-                    </div>
+                <div class="text-center py-8 text-text-muted">
+                    <svg class="w-12 h-12 mx-auto mb-4 text-text-muted" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+                    </svg>
+                    <p class="mb-2">No group rides scheduled</p>
+                    <p class="text-sm">Be the first to organize a group ride!</p>
                 </div>
             </div>
 
@@ -1654,22 +1782,30 @@ function viewGroup(groupName) {
 }
 
 function savePrivacySettings() {
+    // Update privacy settings in profile
+    if (profileManager.userProfile) {
+        const form = document.querySelector('#privacySafetyContent');
+        const checkboxes = form.querySelectorAll('input[type="checkbox"]');
+        
+        checkboxes.forEach(checkbox => {
+            if (profileManager.userProfile.privacy) {
+                profileManager.userProfile.privacy[checkbox.name] = checkbox.checked;
+            }
+        });
+        
+        localStorage.setItem('currentUser', JSON.stringify(profileManager.userProfile));
+    }
+    
     profileManager.showNotification('Privacy settings saved successfully!', 'success');
 }
 
 // Initialize Profile Manager
 const profileManager = new ProfileManager();
 
-// Check if user came from successful registration
+// Handle page load and new user welcome
 document.addEventListener('DOMContentLoaded', function() {
-    // Show welcome message for new users
-    const pendingUser = sessionStorage.getItem('pendingUser');
-    if (pendingUser) {
-        const user = JSON.parse(pendingUser);
-        setTimeout(() => {
-            profileManager.showNotification(`Welcome to UniCircle, ${user.fullName.split(' ')[0]}! Your profile is now active and ready to use.`, 'success');
-        }, 500);
-    }
+    // Additional initialization if needed
+    console.log('Profile management system initialized');
 });
 </script>
 <script id="dhws-dataInjector" src="../public/dhws-data-injector.js"></script>
